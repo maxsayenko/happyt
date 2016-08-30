@@ -15,6 +15,7 @@
 		E20A3AEF1D755B0C0010E86B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A3AEE1D755B0C0010E86B /* FBSDKCoreKit.framework */; };
 		E20A3AF11D755B1F0010E86B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A3AF01D755B1F0010E86B /* FBSDKShareKit.framework */; };
 		E20A3AF31D755B340010E86B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A3AF21D755B340010E86B /* FBSDKLoginKit.framework */; };
+		E20A3AF61D755F650010E86B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A3AF51D755F650010E86B /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		E20A3AF01D755B1F0010E86B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "happyt/FacebookSDKs-iOS-4.15.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		E20A3AF21D755B340010E86B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "happyt/FacebookSDKs-iOS-4.15.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		E20A3AF41D755CE60010E86B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		E20A3AF51D755F650010E86B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "happyt/FacebookSDKs-iOS-4.15.0/Bolts.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20A3AF61D755F650010E86B /* Bolts.framework in Frameworks */,
 				E20A3AF31D755B340010E86B /* FBSDKLoginKit.framework in Frameworks */,
 				E20A3AF11D755B1F0010E86B /* FBSDKShareKit.framework in Frameworks */,
 				E20A3AEF1D755B0C0010E86B /* FBSDKCoreKit.framework in Frameworks */,
@@ -49,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				E20A3AF41D755CE60010E86B /* Bridging-Header.h */,
+				E20A3AF51D755F650010E86B /* Bolts.framework */,
 				E20A3AF21D755B340010E86B /* FBSDKLoginKit.framework */,
 				E20A3AF01D755B1F0010E86B /* FBSDKShareKit.framework */,
 				E20A3AEE1D755B0C0010E86B /* FBSDKCoreKit.framework */,
