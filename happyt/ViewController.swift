@@ -18,6 +18,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         {
             // User is already logged in, do work such as go to next view controller.
             debugPrint("Logged In")
+            returnUserData()
         }
         else
         {
@@ -74,10 +75,13 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             else
             {
                 print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
-                let userEmail : NSString = result.valueForKey("email") as! NSString
-                print("User Email is: \(userEmail)")
+                if let userName = result.valueForKey("name") as? String {
+                    print("User Name is: \(userName)")
+                }
+
+                if let userEmail = result.valueForKey("email") as? String {
+                    print("User Email is: \(userEmail)")
+                }
             }
         })
     }
