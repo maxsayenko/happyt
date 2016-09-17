@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // User is already logged in, do work such as go to next view controller.
             debugPrint("Logged In")
             returnUserData()
+            debugPrint("segue")
             self.performSegueWithIdentifier("toDashboardSegue", sender: self)
         }
         else
@@ -85,6 +86,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 }
             }
         })
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        debugPrint(segue.identifier)
+        if(segue.identifier == "toDashboardSegue") {
+
+        }
     }
 
 

@@ -33,7 +33,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="IZ5-mA-yN8"/>
                     <connections>
-                        <segue destination="JBP-Ri-sUt" kind="show" identifier="toDashboardSegue" id="T0T-6R-WRU"/>
+                        <segue destination="JBP-Ri-sUt" kind="showDetail" identifier="toDashboardSegue" animates="NO" action="showViewController:sender:" id="T0T-6R-WRU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -53,7 +53,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkC-f9-C0L">
-                                <rect key="frame" x="279" y="147" width="42" height="21"/>
+                                <rect key="frame" x="279" y="103" width="42" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="dj3-H8-hKH"/>
                                 </constraints>
@@ -61,10 +61,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdk-fI-Xf5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3Ir-ZD-Alr"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Habits" id="dYR-72-Bwr"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zdk-fI-Xf5" firstAttribute="centerX" secondItem="YkC-f9-C0L" secondAttribute="centerX" id="0Fj-sI-bRB"/>
+                            <constraint firstItem="zdk-fI-Xf5" firstAttribute="top" secondItem="ql2-0d-WCh" secondAttribute="top" id="9ZR-ez-yRG"/>
                             <constraint firstItem="YkC-f9-C0L" firstAttribute="centerX" secondItem="ql2-0d-WCh" secondAttribute="centerX" id="PG5-QG-kg9"/>
+                            <constraint firstItem="zdk-fI-Xf5" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leading" id="Rh7-S7-lhG"/>
                             <constraint firstItem="YkC-f9-C0L" firstAttribute="top" secondItem="Ybg-6k-BO5" secondAttribute="bottom" constant="83" id="aJ2-uL-cCx"/>
                             <constraint firstItem="mqh-BS-CQz" firstAttribute="top" secondItem="YkC-f9-C0L" secondAttribute="bottom" constant="383" id="prQ-pZ-bBH"/>
                         </constraints>
@@ -88,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcM-Ed-lwc">
-                                <rect key="frame" x="279" y="160" width="42" height="21"/>
+                                <rect key="frame" x="279" y="116" width="42" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="DKL-bt-Zd5"/>
                                 </constraints>
@@ -96,11 +108,23 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q16-cI-s7A">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="uJ4-wE-pX8"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Stats" id="SXD-r7-NTv"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XcV-d0-NyM" firstAttribute="top" secondItem="VcM-Ed-lwc" secondAttribute="bottom" constant="370" id="24D-2F-UVw"/>
+                            <constraint firstItem="q16-cI-s7A" firstAttribute="centerX" secondItem="VcM-Ed-lwc" secondAttribute="centerX" id="3Oa-Ib-vjo"/>
                             <constraint firstItem="VcM-Ed-lwc" firstAttribute="centerX" secondItem="nyK-F1-vzo" secondAttribute="centerX" id="BaL-Y4-Gal"/>
+                            <constraint firstItem="q16-cI-s7A" firstAttribute="top" secondItem="nyK-F1-vzo" secondAttribute="top" id="Ct2-9U-TyD"/>
+                            <constraint firstItem="q16-cI-s7A" firstAttribute="leading" secondItem="nyK-F1-vzo" secondAttribute="leading" id="Rw5-qt-mC7"/>
                             <constraint firstItem="VcM-Ed-lwc" firstAttribute="top" secondItem="fw3-ZO-tbD" secondAttribute="bottom" constant="96" id="mjT-Kp-c1V"/>
                         </constraints>
                     </view>

@@ -14,7 +14,6 @@ class HabitsViewController: UIViewController {
         super.viewDidLoad()
         debugPrint("Habits")
         self.navigationController?.navigationBarHidden = true
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
