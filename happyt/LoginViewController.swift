@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // User is already logged in, do work such as go to next view controller.
             debugPrint("Logged In")
             returnUserData()
+            self.performSegueWithIdentifier("toDashboardSegue", sender: self)
         }
         else
         {

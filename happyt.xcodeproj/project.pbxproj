@@ -16,6 +16,7 @@
 		E20A3AF11D755B1F0010E86B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A3AF01D755B1F0010E86B /* FBSDKShareKit.framework */; };
 		E20A3AF31D755B340010E86B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A3AF21D755B340010E86B /* FBSDKLoginKit.framework */; };
 		E20A3AF61D755F650010E86B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A3AF51D755F650010E86B /* Bolts.framework */; };
+		E20A3AF81D772A390010E86B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AF71D772A390010E86B /* DashboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		E20A3AF21D755B340010E86B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "happyt/FacebookSDKs-iOS-4.15.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		E20A3AF41D755CE60010E86B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E20A3AF51D755F650010E86B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "happyt/FacebookSDKs-iOS-4.15.0/Bolts.framework"; sourceTree = "<group>"; };
+		E20A3AF71D772A390010E86B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +74,13 @@
 		E20A3AD51D7559610010E86B /* happyt */ = {
 			isa = PBXGroup;
 			children = (
-				E20A3AD61D7559610010E86B /* AppDelegate.swift */,
 				E20A3AD81D7559610010E86B /* LoginViewController.swift */,
+				E20A3AF71D772A390010E86B /* DashboardViewController.swift */,
 				E20A3ADA1D7559610010E86B /* Main.storyboard */,
 				E20A3ADD1D7559610010E86B /* Assets.xcassets */,
 				E20A3ADF1D7559610010E86B /* LaunchScreen.storyboard */,
 				E20A3AE21D7559620010E86B /* Info.plist */,
+				E20A3AD61D7559610010E86B /* AppDelegate.swift */,
 			);
 			path = happyt;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E20A3AD91D7559610010E86B /* LoginViewController.swift in Sources */,
+				E20A3AF81D772A390010E86B /* DashboardViewController.swift in Sources */,
 				E20A3AD71D7559610010E86B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
