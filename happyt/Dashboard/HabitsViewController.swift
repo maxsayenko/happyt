@@ -8,11 +8,12 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
+class HabitsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        debugPrint("Dashboard")
+        debugPrint("Habits")
+        self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view.
     }
 
