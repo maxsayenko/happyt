@@ -113,7 +113,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Add" id="aLN-KP-aqM">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="20i-9M-ARk">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="20i-9M-ARk">
                                             <connections>
                                                 <action selector="CancelClick:" destination="ZmN-xA-Z1K" id="0zv-Oh-1SW"/>
                                             </connections>
