@@ -53,15 +53,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkC-f9-C0L">
-                                <rect key="frame" x="279" y="103" width="42" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="dj3-H8-hKH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdk-fI-Xf5">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                 <constraints>
@@ -77,16 +68,47 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Habits:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyg-Wn-vb9">
+                                <rect key="frame" x="20" y="60" width="110" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="MC3-Nt-gMy"/>
+                                    <constraint firstAttribute="height" constant="33" id="nUR-uf-80L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H2d-hH-uOX">
+                                <rect key="frame" x="0.0" y="101" width="600" height="450"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zdk-fI-Xf5" firstAttribute="centerX" secondItem="YkC-f9-C0L" secondAttribute="centerX" id="0Fj-sI-bRB"/>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="top" secondItem="ql2-0d-WCh" secondAttribute="top" id="9ZR-ez-yRG"/>
-                            <constraint firstItem="YkC-f9-C0L" firstAttribute="centerX" secondItem="ql2-0d-WCh" secondAttribute="centerX" id="PG5-QG-kg9"/>
+                            <constraint firstItem="H2d-hH-uOX" firstAttribute="top" secondItem="Iyg-Wn-vb9" secondAttribute="bottom" constant="8" symbolic="YES" id="9h1-8D-xZX"/>
+                            <constraint firstItem="Iyg-Wn-vb9" firstAttribute="leading" secondItem="zdk-fI-Xf5" secondAttribute="leading" constant="20" id="Ahe-DD-b1l"/>
+                            <constraint firstItem="H2d-hH-uOX" firstAttribute="leading" secondItem="zdk-fI-Xf5" secondAttribute="leading" id="EQb-Rc-YNc"/>
+                            <constraint firstItem="zdk-fI-Xf5" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leadingMargin" constant="-20" id="GJi-ol-93M"/>
+                            <constraint firstItem="H2d-hH-uOX" firstAttribute="bottom" secondItem="mqh-BS-CQz" secondAttribute="top" id="MlA-2e-cGg"/>
+                            <constraint firstItem="mqh-BS-CQz" firstAttribute="top" secondItem="Iyg-Wn-vb9" secondAttribute="bottom" constant="458" id="NWn-hN-yA2"/>
+                            <constraint firstItem="Iyg-Wn-vb9" firstAttribute="top" secondItem="zdk-fI-Xf5" secondAttribute="bottom" id="NyT-ZO-sgs"/>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leading" id="Rh7-S7-lhG"/>
-                            <constraint firstItem="YkC-f9-C0L" firstAttribute="top" secondItem="Ybg-6k-BO5" secondAttribute="bottom" constant="83" id="aJ2-uL-cCx"/>
-                            <constraint firstItem="mqh-BS-CQz" firstAttribute="top" secondItem="YkC-f9-C0L" secondAttribute="bottom" constant="383" id="prQ-pZ-bBH"/>
+                            <constraint firstItem="zdk-fI-Xf5" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leadingMargin" constant="-20" id="Zzc-vA-ezJ"/>
+                            <constraint firstItem="H2d-hH-uOX" firstAttribute="trailing" secondItem="zdk-fI-Xf5" secondAttribute="trailing" id="eFb-7L-q2g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zdk-fI-Xf5" secondAttribute="trailing" id="f4d-R7-vna"/>
+                            <constraint firstItem="zdk-fI-Xf5" firstAttribute="centerX" secondItem="ql2-0d-WCh" secondAttribute="centerX" id="hAV-fC-Ob8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zdk-fI-Xf5" secondAttribute="trailing" constant="-20" id="kc5-ad-GLH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GJi-ol-93M"/>
+                                <exclude reference="Rh7-S7-lhG"/>
+                                <exclude reference="f4d-R7-vna"/>
+                                <exclude reference="kc5-ad-GLH"/>
+                                <exclude reference="NWn-hN-yA2"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Habits" id="mfl-EG-DTU"/>
                 </viewController>
@@ -238,12 +260,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XcV-d0-NyM" firstAttribute="top" secondItem="VcM-Ed-lwc" secondAttribute="bottom" constant="370" id="24D-2F-UVw"/>
+                            <constraint firstItem="q16-cI-s7A" firstAttribute="centerX" secondItem="nyK-F1-vzo" secondAttribute="centerX" id="2bF-7J-FgR"/>
                             <constraint firstItem="q16-cI-s7A" firstAttribute="centerX" secondItem="VcM-Ed-lwc" secondAttribute="centerX" id="3Oa-Ib-vjo"/>
                             <constraint firstItem="VcM-Ed-lwc" firstAttribute="centerX" secondItem="nyK-F1-vzo" secondAttribute="centerX" id="BaL-Y4-Gal"/>
                             <constraint firstItem="q16-cI-s7A" firstAttribute="top" secondItem="nyK-F1-vzo" secondAttribute="top" id="Ct2-9U-TyD"/>
                             <constraint firstItem="q16-cI-s7A" firstAttribute="leading" secondItem="nyK-F1-vzo" secondAttribute="leading" id="Rw5-qt-mC7"/>
                             <constraint firstItem="VcM-Ed-lwc" firstAttribute="top" secondItem="fw3-ZO-tbD" secondAttribute="bottom" constant="96" id="mjT-Kp-c1V"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3Oa-Ib-vjo"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="yZ9-9v-jwQ"/>
                 </viewController>
