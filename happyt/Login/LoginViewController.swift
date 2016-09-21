@@ -19,8 +19,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // User is already logged in, do work such as go to next view controller.
             debugPrint("Logged In")
             returnUserData()
-            debugPrint("segue")
-            self.performSegueWithIdentifier("toDashboardSegue", sender: self)
+
         }
         else
         {
@@ -46,11 +45,16 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if ((error) != nil)
         {
             // Process error
+            debugPrint("Error: loginButton")
         }
         else if result.isCancelled {
             // Handle cancellations
+            debugPrint("Error: Handle cancellations")
         }
         else {
+            // TODO: Simplify login flow
+            debugPrint("segue1")
+            self.performSegueWithIdentifier("toDashboardSegue", sender: self)
             // If you ask for multiple permissions at once, you
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
@@ -66,9 +70,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func returnUserData()
     {
+        debugPrint("returnUserData")
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
+            debugPrint("got FBSDKGraphRequest DONE")
             if ((error) != nil)
             {
                 // Process error
@@ -76,6 +81,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
             else
             {
+                debugPrint("segue")
+                self.performSegueWithIdentifier("toDashboardSegue", sender: self)
+                
+                
                 print("fetched user: \(result)")
                 if let userName = result.valueForKey("name") as? String {
                     print("User Name is: \(userName)")
