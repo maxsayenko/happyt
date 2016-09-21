@@ -81,6 +81,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H2d-hH-uOX">
                                 <rect key="frame" x="0.0" y="101" width="600" height="450"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Awf-zK-Pmv">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Awf-zK-Pmv" id="b4D-7X-5wh">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2V1-MR-Uo1" id="m44-bk-bHx"/>
+                                    <outlet property="delegate" destination="2V1-MR-Uo1" id="4Rz-nW-vD8"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -111,6 +125,9 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Habits" id="mfl-EG-DTU"/>
+                    <connections>
+                        <outlet property="table" destination="H2d-hH-uOX" id="bLa-pw-Crp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5S9-mV-8K9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

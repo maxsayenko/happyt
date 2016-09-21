@@ -8,13 +8,14 @@
 
 import UIKit
 
-class HabitsViewController: UIViewController {
-
+class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    @IBOutlet var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         debugPrint("Habits")
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
         debugPrint(appDelegate.habits)
         self.navigationController?.navigationBarHidden = true
     }
@@ -24,15 +25,16 @@ class HabitsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return appDelegate.habits.count
     }
-    */
-
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = table.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        cell.textLabel?.text = appDelegate.habits[indexPath.row].name
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    }
 }
