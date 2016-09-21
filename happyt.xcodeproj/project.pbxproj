@@ -19,6 +19,7 @@
 		E20A3AF81D772A390010E86B /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AF71D772A390010E86B /* HabitsViewController.swift */; };
 		E20A3AFC1D8DD9520010E86B /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */; };
 		E20A3B001D8DF71E0010E86B /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AFF1D8DF71E0010E86B /* AddHabitViewController.swift */; };
+		E20A3B031D90CD3F0010E86B /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3B021D90CD3F0010E86B /* Habit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		E20A3AF71D772A390010E86B /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		E20A3AFF1D8DF71E0010E86B /* AddHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
+		E20A3B021D90CD3F0010E86B /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		E20A3AD51D7559610010E86B /* happyt */ = {
 			isa = PBXGroup;
 			children = (
+				E20A3B011D90CD140010E86B /* DataModels */,
 				E20A3AFA1D8DD8BD0010E86B /* Login */,
 				E20A3AF91D8DD8730010E86B /* Dashboard */,
 				E20A3ADA1D7559610010E86B /* Main.storyboard */,
@@ -105,6 +108,14 @@
 				E20A3AD81D7559610010E86B /* LoginViewController.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		E20A3B011D90CD140010E86B /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				E20A3B021D90CD3F0010E86B /* Habit.swift */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20A3B031D90CD3F0010E86B /* Habit.swift in Sources */,
 				E20A3AD91D7559610010E86B /* LoginViewController.swift in Sources */,
 				E20A3AF81D772A390010E86B /* HabitsViewController.swift in Sources */,
 				E20A3B001D8DF71E0010E86B /* AddHabitViewController.swift in Sources */,

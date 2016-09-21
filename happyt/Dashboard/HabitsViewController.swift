@@ -13,6 +13,9 @@ class HabitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         debugPrint("Habits")
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
+        debugPrint(appDelegate.habits)
         self.navigationController?.navigationBarHidden = true
     }
 
