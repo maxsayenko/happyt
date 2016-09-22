@@ -41,6 +41,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        debugPrint("cell touched at index: \(indexPath.row)")
+        let selectedHabit = appDelegate.habits[indexPath.row]
+        debugPrint("cell touched at index: \(indexPath.row) with name: \(selectedHabit.name)")
     }
 }
