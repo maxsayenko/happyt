@@ -254,6 +254,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="nameText" destination="cEz-PA-APZ" id="rt7-oo-Bik"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbl-Kq-weC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

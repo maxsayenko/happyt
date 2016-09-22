@@ -12,6 +12,11 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     @IBOutlet var table: UITableView!
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        table.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,5 +41,6 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        debugPrint("cell touched at index: \(indexPath.row)")
     }
 }

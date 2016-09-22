@@ -9,12 +9,18 @@
 import UIKit
 
 class AddHabitViewController: UIViewController {
-
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    @IBOutlet var nameText: UITextField!
+    
     @IBAction func CancelClick(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
     @IBAction func SaveClick(sender: UIBarButtonItem) {
+        // TODO: null checks
+        let newHabit = Habit(name: nameText.text!)
+        appDelegate.habits.append(newHabit)
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
