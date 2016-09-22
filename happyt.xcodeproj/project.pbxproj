@@ -20,6 +20,7 @@
 		E20A3AFC1D8DD9520010E86B /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */; };
 		E20A3B001D8DF71E0010E86B /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AFF1D8DF71E0010E86B /* AddHabitViewController.swift */; };
 		E20A3B031D90CD3F0010E86B /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3B021D90CD3F0010E86B /* Habit.swift */; };
+		E248B4E81D93B0880039CCB4 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248B4E71D93B0880039CCB4 /* HabitTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,10 +36,11 @@
 		E20A3AF21D755B340010E86B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "happyt/FacebookSDKs-iOS-4.15.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		E20A3AF41D755CE60010E86B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E20A3AF51D755F650010E86B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "happyt/FacebookSDKs-iOS-4.15.0/Bolts.framework"; sourceTree = "<group>"; };
-		E20A3AF71D772A390010E86B /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		E20A3AF71D772A390010E86B /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HabitsViewController.swift; path = happyt/Dashboard/HabitsView/HabitsViewController.swift; sourceTree = SOURCE_ROOT; };
 		E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		E20A3AFF1D8DF71E0010E86B /* AddHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
 		E20A3B021D90CD3F0010E86B /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		E248B4E71D93B0880039CCB4 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,7 @@
 		E20A3AF91D8DD8730010E86B /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				E20A3AF71D772A390010E86B /* HabitsViewController.swift */,
+				E248B4E91D93B22B0039CCB4 /* HabitsView */,
 				E20A3AFF1D8DF71E0010E86B /* AddHabitViewController.swift */,
 				E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */,
 			);
@@ -116,6 +118,15 @@
 				E20A3B021D90CD3F0010E86B /* Habit.swift */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		E248B4E91D93B22B0039CCB4 /* HabitsView */ = {
+			isa = PBXGroup;
+			children = (
+				E20A3AF71D772A390010E86B /* HabitsViewController.swift */,
+				E248B4E71D93B0880039CCB4 /* HabitTableViewCell.swift */,
+			);
+			path = HabitsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 				E20A3AF81D772A390010E86B /* HabitsViewController.swift in Sources */,
 				E20A3B001D8DF71E0010E86B /* AddHabitViewController.swift in Sources */,
 				E20A3AD71D7559610010E86B /* AppDelegate.swift in Sources */,
+				E248B4E81D93B0880039CCB4 /* HabitTableViewCell.swift in Sources */,
 				E20A3AFC1D8DD9520010E86B /* StatsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +364,7 @@
 				E20A3AE71D7559620010E86B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

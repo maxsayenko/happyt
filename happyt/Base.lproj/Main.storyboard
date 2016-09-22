@@ -82,13 +82,29 @@
                                 <rect key="frame" x="0.0" y="101" width="600" height="450"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Awf-zK-Pmv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="habitCell" id="Awf-zK-Pmv" customClass="HabitTableViewCell" customModule="happyt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Awf-zK-Pmv" id="b4D-7X-5wh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-Eo-ahY">
+                                                    <rect key="frame" x="279" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eGr-Eo-ahY" firstAttribute="top" secondItem="b4D-7X-5wh" secondAttribute="topMargin" constant="3" id="RIT-qK-UJy"/>
+                                                <constraint firstItem="eGr-Eo-ahY" firstAttribute="centerX" secondItem="b4D-7X-5wh" secondAttribute="centerX" id="nXM-oq-cD9"/>
+                                                <constraint firstItem="eGr-Eo-ahY" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" id="pI9-e9-ITX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="eGr-Eo-ahY" id="Bbx-7l-uPB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

@@ -30,8 +30,8 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = table.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        cell.textLabel?.text = appDelegate.habits[indexPath.row].name
+        let cell = table.dequeueReusableCellWithIdentifier("habitCell")! as! HabitTableViewCell
+        cell.nameLabel.text = appDelegate.habits[indexPath.row].name
         return cell
     }
     
