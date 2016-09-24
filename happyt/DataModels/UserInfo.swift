@@ -10,6 +10,9 @@ struct UserInfo {
     var name: String
     var id: String
     var email: String
+    var profilePicSource: String {
+        get { return "https://graph.facebook.com/\(id)/picture?type=large" }
+    }
     
     init() {
         name = ""

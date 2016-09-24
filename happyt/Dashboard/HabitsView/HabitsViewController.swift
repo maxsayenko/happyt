@@ -27,8 +27,24 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         debugPrint("Habits")
         debugPrint(appDelegate.habits)
         self.navigationController?.navigationBarHidden = true
-        userNameLabel.text = appDelegate.userInfo?.name
+
+        // TODO: Move to some view init function
+        userProfImageView.layer.cornerRadius = 40
+//        userProfImageView.backgroundColor = UIColor.greenColor()
+        userProfImageView.layer.borderColor = UIColor.grayColor().CGColor
+        userProfImageView.layer.borderWidth = 0.5
+        userProfImageView.clipsToBounds = true
         
+        
+        
+        userNameLabel.text = appDelegate.userInfo?.name
+        Service.LoadImage(url: appDelegate.userInfo!.profilePicSource).then { image in
+            dispatch_async(dispatch_get_main_queue(), {
+                self.userProfImageView.image = image
+            })
+            }.error { err in
+                debugPrint("Error while fetching Image from url: \(err)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
