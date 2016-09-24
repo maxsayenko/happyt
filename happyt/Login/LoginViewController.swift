@@ -9,6 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,16 +84,22 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             {
                 debugPrint("segue")
                 self.performSegueWithIdentifier("toDashboardSegue", sender: self)
-                
-                
+
                 print("fetched user: \(result)")
+                var userInfo = UserInfo()
                 if let userName = result.valueForKey("name") as? String {
-                    print("User Name is: \(userName)")
+                    userInfo.name = userName
                 }
 
                 if let userEmail = result.valueForKey("email") as? String {
-                    print("User Email is: \(userEmail)")
+                    userInfo.email = userEmail
                 }
+                
+                if let userId = result.valueForKey("id") as? String {
+                    userInfo.id = userId
+                }
+                
+                self.appDelegate.userInfo = userInfo
             }
         })
     }
