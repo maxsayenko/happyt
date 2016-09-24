@@ -27,6 +27,8 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         debugPrint("Habits")
         debugPrint(appDelegate.habits)
         self.navigationController?.navigationBarHidden = true
+        userNameLabel.text = appDelegate.userInfo?.name
+        
     }
 
     override func didReceiveMemoryWarning() {

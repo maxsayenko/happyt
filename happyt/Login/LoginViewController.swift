@@ -100,6 +100,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 }
                 
                 self.appDelegate.userInfo = userInfo
+                debugPrint(self.appDelegate.userInfo)
             }
         })
     }
