@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -78,32 +80,66 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H2d-hH-uOX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H2d-hH-uOX">
                                 <rect key="frame" x="0.0" y="229" width="600" height="322"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="habitCell" id="Awf-zK-Pmv" customClass="HabitTableViewCell" customModule="happyt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Awf-zK-Pmv" id="b4D-7X-5wh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-Eo-ahY">
-                                                    <rect key="frame" x="279" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="279" y="29" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgw-ES-uPN">
+                                                    <rect key="frame" x="8" y="15" width="48" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="IzX-Q9-H93"/>
+                                                        <constraint firstAttribute="width" constant="48" id="lhe-vc-E7s"/>
+                                                    </constraints>
+                                                    <state key="normal" image="plusButton"/>
+                                                    <state key="highlighted" image="plusButtonPressed"/>
+                                                </button>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstItem="sgw-ES-uPN" firstAttribute="baseline" secondItem="eGr-Eo-ahY" secondAttribute="baseline" id="8Kr-zW-Qw6"/>
+                                                <constraint firstItem="sgw-ES-uPN" firstAttribute="firstBaseline" secondItem="eGr-Eo-ahY" secondAttribute="baseline" id="FOR-VP-OOy"/>
+                                                <constraint firstItem="sgw-ES-uPN" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" constant="-5.25" id="Gcv-0V-YaG"/>
+                                                <constraint firstItem="sgw-ES-uPN" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" id="MPa-5P-4Nx"/>
                                                 <constraint firstItem="eGr-Eo-ahY" firstAttribute="top" secondItem="b4D-7X-5wh" secondAttribute="topMargin" constant="3" id="RIT-qK-UJy"/>
+                                                <constraint firstItem="sgw-ES-uPN" firstAttribute="centerY" secondItem="eGr-Eo-ahY" secondAttribute="centerY" id="ZJL-MD-utq"/>
+                                                <constraint firstItem="eGr-Eo-ahY" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" id="Zil-ug-gWF"/>
+                                                <constraint firstItem="sgw-ES-uPN" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" constant="-1.75" id="cZI-cg-yVv"/>
+                                                <constraint firstItem="sgw-ES-uPN" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" constant="-5.25" id="jO8-Vf-2du"/>
                                                 <constraint firstItem="eGr-Eo-ahY" firstAttribute="centerX" secondItem="b4D-7X-5wh" secondAttribute="centerX" id="nXM-oq-cD9"/>
                                                 <constraint firstItem="eGr-Eo-ahY" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" id="pI9-e9-ITX"/>
+                                                <constraint firstItem="sgw-ES-uPN" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" constant="1.25" id="pUj-wd-Oot"/>
+                                                <constraint firstItem="sgw-ES-uPN" firstAttribute="leading" secondItem="b4D-7X-5wh" secondAttribute="leadingMargin" id="vtl-Tu-oSL"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="8Kr-zW-Qw6"/>
+                                                    <exclude reference="FOR-VP-OOy"/>
+                                                    <exclude reference="Gcv-0V-YaG"/>
+                                                    <exclude reference="ZJL-MD-utq"/>
+                                                    <exclude reference="cZI-cg-yVv"/>
+                                                    <exclude reference="jO8-Vf-2du"/>
+                                                    <exclude reference="pUj-wd-Oot"/>
+                                                    <exclude reference="RIT-qK-UJy"/>
+                                                    <exclude reference="Zil-ug-gWF"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="eGr-Eo-ahY" id="Bbx-7l-uPB"/>
+                                            <outlet property="plusButton" destination="sgw-ES-uPN" id="ZWx-Re-cZp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -379,4 +415,8 @@
             <point key="canvasLocation" x="1114" y="88"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plusButton" width="42" height="44"/>
+        <image name="plusButtonPressed" width="42" height="42"/>
+    </resources>
 </document>
