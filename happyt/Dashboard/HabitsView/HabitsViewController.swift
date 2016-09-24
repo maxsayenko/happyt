@@ -11,6 +11,10 @@ import UIKit
 class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    @IBOutlet var userProfImageView: UIImageView!
+    
+    @IBOutlet var userNameLabel: UILabel!
+    
     @IBOutlet var table: UITableView!
 
     override func viewWillAppear(animated: Bool) {

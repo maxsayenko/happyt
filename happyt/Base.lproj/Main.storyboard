@@ -69,7 +69,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Habits:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyg-Wn-vb9">
-                                <rect key="frame" x="20" y="60" width="110" height="33"/>
+                                <rect key="frame" x="20" y="188" width="110" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="MC3-Nt-gMy"/>
                                     <constraint firstAttribute="height" constant="33" id="nUR-uf-80L"/>
@@ -79,7 +79,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H2d-hH-uOX">
-                                <rect key="frame" x="0.0" y="101" width="600" height="450"/>
+                                <rect key="frame" x="0.0" y="229" width="600" height="322"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="habitCell" id="Awf-zK-Pmv" customClass="HabitTableViewCell" customModule="happyt" customModuleProvider="target">
@@ -112,23 +112,44 @@
                                     <outlet property="delegate" destination="2V1-MR-Uo1" id="4Rz-nW-vD8"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPM-Xs-Z0S">
+                                <rect key="frame" x="260" y="60" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="4Ac-ap-dtn"/>
+                                    <constraint firstAttribute="height" constant="80" id="Cqx-w0-lYp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg4-Wh-OmZ">
+                                <rect key="frame" x="203" y="148" width="190" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="LIO-VX-xku"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="top" secondItem="ql2-0d-WCh" secondAttribute="top" id="9ZR-ez-yRG"/>
-                            <constraint firstItem="H2d-hH-uOX" firstAttribute="top" secondItem="Iyg-Wn-vb9" secondAttribute="bottom" constant="8" symbolic="YES" id="9h1-8D-xZX"/>
                             <constraint firstItem="Iyg-Wn-vb9" firstAttribute="leading" secondItem="zdk-fI-Xf5" secondAttribute="leading" constant="20" id="Ahe-DD-b1l"/>
-                            <constraint firstItem="H2d-hH-uOX" firstAttribute="leading" secondItem="zdk-fI-Xf5" secondAttribute="leading" id="EQb-Rc-YNc"/>
+                            <constraint firstItem="H2d-hH-uOX" firstAttribute="bottom" secondItem="mqh-BS-CQz" secondAttribute="top" id="DDa-u4-7aN"/>
+                            <constraint firstItem="dPM-Xs-Z0S" firstAttribute="top" secondItem="zdk-fI-Xf5" secondAttribute="bottom" id="Djf-hb-fbt"/>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leadingMargin" constant="-20" id="GJi-ol-93M"/>
-                            <constraint firstItem="H2d-hH-uOX" firstAttribute="bottom" secondItem="mqh-BS-CQz" secondAttribute="top" id="MlA-2e-cGg"/>
                             <constraint firstItem="mqh-BS-CQz" firstAttribute="top" secondItem="Iyg-Wn-vb9" secondAttribute="bottom" constant="458" id="NWn-hN-yA2"/>
-                            <constraint firstItem="Iyg-Wn-vb9" firstAttribute="top" secondItem="zdk-fI-Xf5" secondAttribute="bottom" id="NyT-ZO-sgs"/>
+                            <constraint firstItem="Iyg-Wn-vb9" firstAttribute="top" secondItem="zdk-fI-Xf5" secondAttribute="bottom" constant="128" id="NyT-ZO-sgs"/>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leading" id="Rh7-S7-lhG"/>
+                            <constraint firstItem="H2d-hH-uOX" firstAttribute="top" secondItem="cg4-Wh-OmZ" secondAttribute="bottom" constant="60" id="SYD-E8-jSg"/>
+                            <constraint firstItem="cg4-Wh-OmZ" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leading" constant="203" id="YKX-rS-mj5"/>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leadingMargin" constant="-20" id="Zzc-vA-ezJ"/>
-                            <constraint firstItem="H2d-hH-uOX" firstAttribute="trailing" secondItem="zdk-fI-Xf5" secondAttribute="trailing" id="eFb-7L-q2g"/>
+                            <constraint firstItem="H2d-hH-uOX" firstAttribute="top" secondItem="Iyg-Wn-vb9" secondAttribute="bottom" constant="8" symbolic="YES" id="cFm-HZ-46f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zdk-fI-Xf5" secondAttribute="trailing" id="f4d-R7-vna"/>
+                            <constraint firstItem="cg4-Wh-OmZ" firstAttribute="top" secondItem="dPM-Xs-Z0S" secondAttribute="bottom" constant="8" symbolic="YES" id="gKT-lt-hlk"/>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="centerX" secondItem="ql2-0d-WCh" secondAttribute="centerX" id="hAV-fC-Ob8"/>
+                            <constraint firstItem="H2d-hH-uOX" firstAttribute="leading" secondItem="zdk-fI-Xf5" secondAttribute="leading" id="k8C-ui-nSS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zdk-fI-Xf5" secondAttribute="trailing" constant="-20" id="kc5-ad-GLH"/>
+                            <constraint firstItem="dPM-Xs-Z0S" firstAttribute="centerX" secondItem="zdk-fI-Xf5" secondAttribute="centerX" id="mXV-u9-1fb"/>
+                            <constraint firstItem="H2d-hH-uOX" firstAttribute="trailing" secondItem="zdk-fI-Xf5" secondAttribute="trailing" id="yb5-Cu-EMN"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -143,6 +164,8 @@
                     <tabBarItem key="tabBarItem" title="Habits" id="mfl-EG-DTU"/>
                     <connections>
                         <outlet property="table" destination="H2d-hH-uOX" id="bLa-pw-Crp"/>
+                        <outlet property="userNameLabel" destination="cg4-Wh-OmZ" id="UkI-m8-5Aw"/>
+                        <outlet property="userProfImageView" destination="dPM-Xs-Z0S" id="i8l-E6-P4F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5S9-mV-8K9" userLabel="First Responder" sceneMemberID="firstResponder"/>
