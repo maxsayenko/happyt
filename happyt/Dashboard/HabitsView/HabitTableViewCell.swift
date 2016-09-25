@@ -9,9 +9,7 @@ class HabitTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var plusButton: UIButton!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        debugPrint("INIT")
-        //plusButton.setImage(UIImage(named: "plusButtonPressed"), forState:.Highlighted)
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
 }

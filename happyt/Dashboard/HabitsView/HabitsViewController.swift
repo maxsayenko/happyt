@@ -35,8 +35,6 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         userProfImageView.layer.borderWidth = 0.5
         userProfImageView.clipsToBounds = true
         
-        
-        
         userNameLabel.text = appDelegate.userInfo?.name
         Service.LoadImage(url: appDelegate.userInfo!.profilePicSource).then { image in
             dispatch_async(dispatch_get_main_queue(), {

@@ -106,6 +106,15 @@
                                                     <state key="normal" image="plusButton"/>
                                                     <state key="highlighted" image="plusButtonPressed"/>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2b-Ub-Kju">
+                                                    <rect key="frame" x="544" y="15" width="48" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="Rtg-36-U4O"/>
+                                                        <constraint firstAttribute="width" constant="48" id="TPd-3K-O1f"/>
+                                                    </constraints>
+                                                    <state key="normal" image="minusButton"/>
+                                                    <state key="highlighted" image="minusButtonPressed"/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -116,8 +125,12 @@
                                                 <constraint firstItem="eGr-Eo-ahY" firstAttribute="top" secondItem="b4D-7X-5wh" secondAttribute="topMargin" constant="3" id="RIT-qK-UJy"/>
                                                 <constraint firstItem="sgw-ES-uPN" firstAttribute="centerY" secondItem="eGr-Eo-ahY" secondAttribute="centerY" id="ZJL-MD-utq"/>
                                                 <constraint firstItem="eGr-Eo-ahY" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" id="Zil-ug-gWF"/>
+                                                <constraint firstItem="l2b-Ub-Kju" firstAttribute="firstBaseline" secondItem="eGr-Eo-ahY" secondAttribute="baseline" id="bA0-qA-Tba"/>
                                                 <constraint firstItem="sgw-ES-uPN" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" constant="-1.75" id="cZI-cg-yVv"/>
+                                                <constraint firstItem="l2b-Ub-Kju" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" id="eA4-40-IGH"/>
                                                 <constraint firstItem="sgw-ES-uPN" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" constant="-5.25" id="jO8-Vf-2du"/>
+                                                <constraint firstItem="l2b-Ub-Kju" firstAttribute="trailing" secondItem="b4D-7X-5wh" secondAttribute="trailingMargin" id="k3C-eu-bdg"/>
+                                                <constraint firstItem="l2b-Ub-Kju" firstAttribute="baseline" secondItem="eGr-Eo-ahY" secondAttribute="baseline" id="mzk-OJ-hco"/>
                                                 <constraint firstItem="eGr-Eo-ahY" firstAttribute="centerX" secondItem="b4D-7X-5wh" secondAttribute="centerX" id="nXM-oq-cD9"/>
                                                 <constraint firstItem="eGr-Eo-ahY" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" id="pI9-e9-ITX"/>
                                                 <constraint firstItem="sgw-ES-uPN" firstAttribute="centerY" secondItem="b4D-7X-5wh" secondAttribute="centerY" constant="1.25" id="pUj-wd-Oot"/>
@@ -134,6 +147,8 @@
                                                     <exclude reference="pUj-wd-Oot"/>
                                                     <exclude reference="RIT-qK-UJy"/>
                                                     <exclude reference="Zil-ug-gWF"/>
+                                                    <exclude reference="bA0-qA-Tba"/>
+                                                    <exclude reference="mzk-OJ-hco"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -416,6 +431,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="minusButton" width="50" height="52"/>
+        <image name="minusButtonPressed" width="50" height="50"/>
         <image name="plusButton" width="42" height="44"/>
         <image name="plusButtonPressed" width="42" height="42"/>
     </resources>
