@@ -8,10 +8,14 @@
 
 import UIKit
 
-class AddHabitViewController: UIViewController {
+class AddHabitViewController: UITableViewController {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     @IBOutlet var nameText: UITextField!
+    
+    @IBOutlet var positiveActionSwitch: UISwitch!
+    
+    @IBOutlet var negativeActionSwitch: UISwitch!
     
     @IBAction func CancelClick(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: {})
@@ -20,6 +24,9 @@ class AddHabitViewController: UIViewController {
     @IBAction func SaveClick(sender: UIBarButtonItem) {
         // TODO: null checks
         let newHabit = Habit(name: nameText.text!)
+        
+        debugPrint(positiveActionSwitch.on)
+        debugPrint(negativeActionSwitch.on)
         appDelegate.habits.append(newHabit)
         self.dismissViewControllerAnimated(true, completion: {})
     }
