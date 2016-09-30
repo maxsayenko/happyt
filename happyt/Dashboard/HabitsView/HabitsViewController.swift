@@ -38,7 +38,6 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         debugPrint(appDelegate.userInfo)
         userNameLabel.text = appDelegate.userInfo?.name
         
-        // Error here: fatal error: unexpectedly found nil while unwrapping an Optional value
         if let userInfo: UserInfo = appDelegate.userInfo {
             Service.LoadImage(url: userInfo.profilePicSource).then { image in
                 dispatch_async(dispatch_get_main_queue(), {
@@ -48,6 +47,12 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     debugPrint("Error while fetching Image from url: \(err)")
             }
         }
+    }
+    
+    func plusButtonClicked(sender:UIButton) {
+        let buttonRow = sender.tag
+        let habit = appDelegate.habits[buttonRow]
+        debugPrint(habit)
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +69,9 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let habit: Habit = appDelegate.habits[indexPath.row]
         cell.nameLabel.text = habit.name
         cell.plusButton.hidden = !habit.hasPlusButton!
+        cell.plusButton.tag = indexPath.row
+        cell.plusButton.addTarget(self, action: #selector(HabitsViewController.plusButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        cell.minusButton.hidden = !habit.hasMinusButton!
         return cell
     }
     
