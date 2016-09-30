@@ -76,13 +76,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             debugPrint("got FBSDKGraphRequest DONE")
-            if ((error) != nil)
-            {
+            if ((error) != nil) {
                 // Process error
                 print("Error: \(error)")
             }
-            else
-            {
+            else {
                 print("fetched user: \(result)")
                 var userInfo = UserInfo()
                 if let userName = result.valueForKey("name") as? String {
@@ -112,7 +110,4 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
         }
     }
-
-
 }
-

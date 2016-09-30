@@ -6,8 +6,8 @@
 //  Copyright © 2016 Max Saienko. All rights reserved.
 //
 
-import Foundation
-
 struct Habit {
     var name: String
+    var hasPlusButton: Bool?
+    var hasMinusButton: Bool?
 }

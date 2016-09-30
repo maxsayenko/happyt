@@ -48,7 +48,6 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     debugPrint("Error while fetching Image from url: \(err)")
             }
         }
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +61,9 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCellWithIdentifier("habitCell")! as! HabitTableViewCell
-        cell.nameLabel.text = appDelegate.habits[indexPath.row].name
+        let habit: Habit = appDelegate.habits[indexPath.row]
+        cell.nameLabel.text = habit.name
+        cell.plusButton.hidden = !habit.hasPlusButton!
         return cell
     }
     
