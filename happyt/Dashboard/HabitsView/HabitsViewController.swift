@@ -35,14 +35,20 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         userProfImageView.layer.borderWidth = 0.5
         userProfImageView.clipsToBounds = true
         
+        debugPrint(appDelegate.userInfo)
         userNameLabel.text = appDelegate.userInfo?.name
-        Service.LoadImage(url: appDelegate.userInfo!.profilePicSource).then { image in
-            dispatch_async(dispatch_get_main_queue(), {
-                self.userProfImageView.image = image
-            })
-            }.error { err in
-                debugPrint("Error while fetching Image from url: \(err)")
+        
+        // Error here: fatal error: unexpectedly found nil while unwrapping an Optional value
+        if let userInfo: UserInfo = appDelegate.userInfo {
+            Service.LoadImage(url: userInfo.profilePicSource).then { image in
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.userProfImageView.image = image
+                })
+                }.error { err in
+                    debugPrint("Error while fetching Image from url: \(err)")
+            }
         }
+
     }
 
     override func didReceiveMemoryWarning() {

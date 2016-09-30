@@ -55,7 +55,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         else {
             // TODO: Simplify login flow
             debugPrint("segue1")
-            self.performSegueWithIdentifier("toDashboardSegue", sender: self)
+            returnUserData()
+            //self.performSegueWithIdentifier("toDashboardSegue", sender: self)
             // If you ask for multiple permissions at once, you
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
@@ -82,9 +83,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
             else
             {
-                debugPrint("segue")
-                self.performSegueWithIdentifier("toDashboardSegue", sender: self)
-
                 print("fetched user: \(result)")
                 var userInfo = UserInfo()
                 if let userName = result.valueForKey("name") as? String {
@@ -101,6 +99,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 self.appDelegate.userInfo = userInfo
                 debugPrint(self.appDelegate.userInfo)
+                
+                debugPrint("segue")
+                self.performSegueWithIdentifier("toDashboardSegue", sender: self)
             }
         })
     }
