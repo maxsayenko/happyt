@@ -7,7 +7,15 @@
 //
 
 struct Habit {
+    var id: String
     var name: String
-    var hasPlusButton: Bool?
-    var hasMinusButton: Bool?
+    var hasPlusButton: Bool = false
+    var hasMinusButton: Bool = false
+    
+    init(name: String, hasPlusButton: Bool, hasMinusButton: Bool) {
+        self.name = name
+        self.hasPlusButton = hasPlusButton
+        self.hasMinusButton = hasMinusButton
+        self.id = NSUUID().UUIDString
+    }
 }

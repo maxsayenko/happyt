@@ -68,10 +68,10 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = table.dequeueReusableCellWithIdentifier("habitCell")! as! HabitTableViewCell
         let habit: Habit = appDelegate.habits[indexPath.row]
         cell.nameLabel.text = habit.name
-        cell.plusButton.hidden = !habit.hasPlusButton!
+        cell.plusButton.hidden = !habit.hasPlusButton
         cell.plusButton.tag = indexPath.row
         cell.plusButton.addTarget(self, action: #selector(HabitsViewController.plusButtonClicked(_:)), forControlEvents: .TouchUpInside)
-        cell.minusButton.hidden = !habit.hasMinusButton!
+        cell.minusButton.hidden = !habit.hasMinusButton
         return cell
     }
     
