@@ -433,27 +433,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LB8-Oh-882" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AB4-sP-FR4">
-                                                <rect key="frame" x="8" y="85" width="584" height="200"/>
-                                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="ZQp-QL-gBw"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="AB4-sP-FR4" firstAttribute="trailing" secondItem="LB8-Oh-882" secondAttribute="trailingMargin" id="F5o-rZ-5gr"/>
-                                            <constraint firstAttribute="bottom" secondItem="AB4-sP-FR4" secondAttribute="bottom" constant="315" id="ftJ-1y-giU"/>
-                                            <constraint firstItem="AB4-sP-FR4" firstAttribute="leading" secondItem="LB8-Oh-882" secondAttribute="leadingMargin" id="oZO-jo-kua"/>
-                                            <constraint firstItem="AB4-sP-FR4" firstAttribute="top" secondItem="LB8-Oh-882" secondAttribute="top" constant="85" id="u77-Ju-nsr"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="ftJ-1y-giU"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -491,6 +471,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="yZ9-9v-jwQ"/>
                     <connections>
+                        <outlet property="contentView" destination="LB8-Oh-882" id="sj0-On-6BE"/>
                         <outlet property="scrollView" destination="YyF-jB-Oo3" id="TVk-Q4-gIw"/>
                     </connections>
                 </viewController>
