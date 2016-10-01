@@ -410,7 +410,7 @@
         <!--Stats-->
         <scene sceneID="bQk-D0-XOd">
             <objects>
-                <viewController id="MAt-40-Ezc" customClass="StatsViewController" customModule="happyt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="MAt-40-Ezc" customClass="StatsViewController" customModule="happyt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fw3-ZO-tbD"/>
                         <viewControllerLayoutGuide type="bottom" id="XcV-d0-NyM"/>
@@ -419,15 +419,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcM-Ed-lwc">
-                                <rect key="frame" x="279" y="116" width="42" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="DKL-bt-Zd5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q16-cI-s7A">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                 <constraints>
@@ -437,24 +428,51 @@
                                     <navigationItem title="Stats" id="SXD-r7-NTv"/>
                                 </items>
                             </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YyF-jB-Oo3">
+                                <rect key="frame" x="0.0" y="60" width="600" height="491"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LB8-Oh-882" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LB8-Oh-882" firstAttribute="top" secondItem="YyF-jB-Oo3" secondAttribute="top" id="4C7-mE-od4"/>
+                                    <constraint firstItem="LB8-Oh-882" firstAttribute="leading" secondItem="YyF-jB-Oo3" secondAttribute="leading" id="MST-b9-qXR"/>
+                                    <constraint firstAttribute="trailing" secondItem="LB8-Oh-882" secondAttribute="trailing" id="SQE-9g-Mag"/>
+                                    <constraint firstAttribute="bottom" secondItem="LB8-Oh-882" secondAttribute="bottom" id="nfL-bu-Rjb"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XcV-d0-NyM" firstAttribute="top" secondItem="VcM-Ed-lwc" secondAttribute="bottom" constant="370" id="24D-2F-UVw"/>
+                            <constraint firstItem="LB8-Oh-882" firstAttribute="height" secondItem="nyK-F1-vzo" secondAttribute="height" id="0WL-NE-oG6"/>
+                            <constraint firstItem="YyF-jB-Oo3" firstAttribute="top" secondItem="q16-cI-s7A" secondAttribute="bottom" id="2BU-28-Wht"/>
                             <constraint firstItem="q16-cI-s7A" firstAttribute="centerX" secondItem="nyK-F1-vzo" secondAttribute="centerX" id="2bF-7J-FgR"/>
-                            <constraint firstItem="q16-cI-s7A" firstAttribute="centerX" secondItem="VcM-Ed-lwc" secondAttribute="centerX" id="3Oa-Ib-vjo"/>
-                            <constraint firstItem="VcM-Ed-lwc" firstAttribute="centerX" secondItem="nyK-F1-vzo" secondAttribute="centerX" id="BaL-Y4-Gal"/>
+                            <constraint firstItem="YyF-jB-Oo3" firstAttribute="top" secondItem="q16-cI-s7A" secondAttribute="bottom" id="4nR-E8-BF7"/>
+                            <constraint firstItem="YyF-jB-Oo3" firstAttribute="trailing" secondItem="q16-cI-s7A" secondAttribute="trailing" id="5Fn-T2-ruX"/>
+                            <constraint firstItem="YyF-jB-Oo3" firstAttribute="bottom" secondItem="XcV-d0-NyM" secondAttribute="top" id="8Or-YG-kOZ"/>
                             <constraint firstItem="q16-cI-s7A" firstAttribute="top" secondItem="nyK-F1-vzo" secondAttribute="top" id="Ct2-9U-TyD"/>
                             <constraint firstItem="q16-cI-s7A" firstAttribute="leading" secondItem="nyK-F1-vzo" secondAttribute="leading" id="Rw5-qt-mC7"/>
-                            <constraint firstItem="VcM-Ed-lwc" firstAttribute="top" secondItem="fw3-ZO-tbD" secondAttribute="bottom" constant="96" id="mjT-Kp-c1V"/>
+                            <constraint firstItem="YyF-jB-Oo3" firstAttribute="width" secondItem="nyK-F1-vzo" secondAttribute="width" id="ZdA-Kg-b5q"/>
+                            <constraint firstItem="YyF-jB-Oo3" firstAttribute="leading" secondItem="q16-cI-s7A" secondAttribute="leading" id="b5e-gp-bUE"/>
+                            <constraint firstItem="YyF-jB-Oo3" firstAttribute="centerX" secondItem="q16-cI-s7A" secondAttribute="centerX" id="cV4-Lc-ULv"/>
+                            <constraint firstItem="YyF-jB-Oo3" firstAttribute="bottom" secondItem="XcV-d0-NyM" secondAttribute="top" id="neX-X3-7Ws"/>
+                            <constraint firstItem="LB8-Oh-882" firstAttribute="width" secondItem="nyK-F1-vzo" secondAttribute="width" id="sor-Ww-YTk"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="3Oa-Ib-vjo"/>
+                                <exclude reference="2BU-28-Wht"/>
+                                <exclude reference="5Fn-T2-ruX"/>
+                                <exclude reference="8Or-YG-kOZ"/>
+                                <exclude reference="b5e-gp-bUE"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="yZ9-9v-jwQ"/>
+                    <connections>
+                        <outlet property="scrollView" destination="YyF-jB-Oo3" id="TVk-Q4-gIw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dk9-Y0-JOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
