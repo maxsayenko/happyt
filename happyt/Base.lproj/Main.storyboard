@@ -428,12 +428,15 @@
                                     <navigationItem title="Stats" id="SXD-r7-NTv"/>
                                 </items>
                             </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YyF-jB-Oo3">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YyF-jB-Oo3">
                                 <rect key="frame" x="0.0" y="60" width="600" height="491"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LB8-Oh-882" userLabel="ContentView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LB8-Oh-882" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="600" id="QCW-yR-uD4"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
