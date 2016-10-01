@@ -19,29 +19,16 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        debugPrint("Stats")
-        debugPrint(self.view.frame)
-        debugPrint(scrollView.frame)
-        debugPrint(contentView.frame)
         
         let habits = appDelegate.habits
+        
         let containerWidth = view.frame.width - 22
         let containerHeight: CGFloat = 300
         var offsetY: CGFloat = 10
         for habit in habits {
-            let habitContainer = UIView(frame: CGRectMake(10, offsetY, containerWidth, containerHeight))
-            habitContainer.backgroundColor = UIColor.greenColor()
-            habitContainer.layer.cornerRadius = 20
-            habitContainer.layer.borderWidth = 1
-
-            let nameLabel = UILabel(frame: CGRectMake(10, 10, containerWidth, 20))
-            nameLabel.text = habit.name
-            habitContainer.addSubview(nameLabel)
-            
-            contentView.addSubview(habitContainer)
-            
-            offsetY = 10 + habitContainer.frame.maxY
-            
+            let container = HabitContainer(frame: CGRectMake(10, offsetY, containerWidth, containerHeight), habit: habit)
+            contentView.addSubview(container.view)
+            offsetY = 10 + container.view.frame.maxY
             
             let chartConfig = BarsChartConfig(
                 valsAxisConfig: ChartAxisConfig(from: 0, to: 8, by: 2)
@@ -56,7 +43,7 @@ class StatsViewController: UIViewController {
                     ("A", 2),
                     ("B", 4.5),
                     ("C", 3),
-                    ("D", 5.4),
+                    ("D", -5.4),
                     ("E", 6.8),
                     ("F", 0.5)
                 ],
@@ -65,7 +52,7 @@ class StatsViewController: UIViewController {
             )
             
             self.charts.append(chart)
-            habitContainer.addSubview(chart.view)
+            container.view.addSubview(chart.view)
         }
         
         

@@ -25,6 +25,7 @@
 		E264109F1D96EF8C0020B0E6 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264109E1D96EF8C0020B0E6 /* UserInfo.swift */; };
 		E26410A41D972C390020B0E6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26410A31D972C390020B0E6 /* Service.swift */; };
 		E2B3873B1D9F061300BCC1D7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3873A1D9F061300BCC1D7 /* Event.swift */; };
+		E2B3873F1D9F996200BCC1D7 /* HabitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		E264109E1D96EF8C0020B0E6 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		E26410A31D972C390020B0E6 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E2B3873A1D9F061300BCC1D7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +122,9 @@
 		E20A3AF91D8DD8730010E86B /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				E2B3873D1D9F994D00BCC1D7 /* StatsView */,
 				E248B4E91D93B22B0039CCB4 /* HabitsView */,
 				E20A3AFF1D8DF71E0010E86B /* AddHabitViewController.swift */,
-				E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -160,6 +162,15 @@
 				E26410A31D972C390020B0E6 /* Service.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E2B3873D1D9F994D00BCC1D7 /* StatsView */ = {
+			isa = PBXGroup;
+			children = (
+				E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */,
+				E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */,
+			);
+			name = StatsView;
 			sourceTree = "<group>";
 		};
 		E371D0AC9048DA08C3A0B9D6 /* Frameworks */ = {
@@ -299,6 +310,7 @@
 				E2B3873B1D9F061300BCC1D7 /* Event.swift in Sources */,
 				E264109F1D96EF8C0020B0E6 /* UserInfo.swift in Sources */,
 				E26410A41D972C390020B0E6 /* Service.swift in Sources */,
+				E2B3873F1D9F996200BCC1D7 /* HabitContainer.swift in Sources */,
 				E20A3AD71D7559610010E86B /* AppDelegate.swift in Sources */,
 				E248B4E81D93B0880039CCB4 /* HabitTableViewCell.swift in Sources */,
 				E20A3AFC1D8DD9520010E86B /* StatsViewController.swift in Sources */,
