@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         habits.append(Habit(name: "test1", hasPlusButton: true, hasMinusButton: true))
         habits.append(Habit(name: "new one", hasPlusButton: true, hasMinusButton: false))
+        habits.append(Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false))
             
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

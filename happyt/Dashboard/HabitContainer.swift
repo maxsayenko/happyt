@@ -14,6 +14,8 @@ struct HabitContainer {
     
     init(frame: CGRect, habit: Habit) {
         let habitContainer = UIView(frame: frame)
+        habitContainer.translatesAutoresizingMaskIntoConstraints = false
+        
         habitContainer.backgroundColor = UIColor.greenColor()
         habitContainer.layer.cornerRadius = 20
         habitContainer.layer.borderWidth = 1
