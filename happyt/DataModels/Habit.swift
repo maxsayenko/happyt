@@ -11,6 +11,7 @@ struct Habit {
     var name: String
     var hasPlusButton: Bool = false
     var hasMinusButton: Bool = false
+    var events: [Event] = []
     
     init(name: String, hasPlusButton: Bool, hasMinusButton: Bool) {
         self.name = name

@@ -52,13 +52,15 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func plusButtonClicked(sender:UIButton) {
         let buttonRow = sender.tag
         let habit = appDelegate.habits[buttonRow]
-        debugPrint(habit)
+        let event = Event(habitId: habit.id, isPositive: true)
+        appDelegate.habits[buttonRow].events.append(event)
     }
     
     func minusButtonClicked(sender:UIButton) {
         let buttonRow = sender.tag
         let habit = appDelegate.habits[buttonRow]
-        debugPrint(habit)
+        let event = Event(habitId: habit.id, isPositive: false)
+        appDelegate.habits[buttonRow].events.append(event)
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,17 +76,21 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = table.dequeueReusableCellWithIdentifier("habitCell")! as! HabitTableViewCell
         let habit: Habit = appDelegate.habits[indexPath.row]
         cell.nameLabel.text = habit.name
+        
         cell.plusButton.hidden = !habit.hasPlusButton
         cell.plusButton.tag = indexPath.row
         cell.plusButton.addTarget(self, action: #selector(HabitsViewController.plusButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        
         cell.minusButton.hidden = !habit.hasMinusButton
         cell.minusButton.tag = indexPath.row
         cell.minusButton.addTarget(self, action: #selector(HabitsViewController.minusButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedHabit = appDelegate.habits[indexPath.row]
         debugPrint("cell touched at index: \(indexPath.row) with name: \(selectedHabit.name)")
+        debugPrint(appDelegate.habits[indexPath.row])
     }
 }
