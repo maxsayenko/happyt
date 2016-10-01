@@ -24,6 +24,7 @@
 		E248B4E81D93B0880039CCB4 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248B4E71D93B0880039CCB4 /* HabitTableViewCell.swift */; };
 		E264109F1D96EF8C0020B0E6 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264109E1D96EF8C0020B0E6 /* UserInfo.swift */; };
 		E26410A41D972C390020B0E6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26410A31D972C390020B0E6 /* Service.swift */; };
+		E2B3873B1D9F061300BCC1D7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3873A1D9F061300BCC1D7 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		E248B4E71D93B0880039CCB4 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		E264109E1D96EF8C0020B0E6 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		E26410A31D972C390020B0E6 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E2B3873A1D9F061300BCC1D7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				E20A3B021D90CD3F0010E86B /* Habit.swift */,
 				E264109E1D96EF8C0020B0E6 /* UserInfo.swift */,
+				E2B3873A1D9F061300BCC1D7 /* Event.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				E20A3AD91D7559610010E86B /* LoginViewController.swift in Sources */,
 				E20A3AF81D772A390010E86B /* HabitsViewController.swift in Sources */,
 				E20A3B001D8DF71E0010E86B /* AddHabitViewController.swift in Sources */,
+				E2B3873B1D9F061300BCC1D7 /* Event.swift in Sources */,
 				E264109F1D96EF8C0020B0E6 /* UserInfo.swift in Sources */,
 				E26410A41D972C390020B0E6 /* Service.swift in Sources */,
 				E20A3AD71D7559610010E86B /* AppDelegate.swift in Sources */,

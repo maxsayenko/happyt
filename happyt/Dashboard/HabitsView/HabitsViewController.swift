@@ -54,6 +54,12 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let habit = appDelegate.habits[buttonRow]
         debugPrint(habit)
     }
+    
+    func minusButtonClicked(sender:UIButton) {
+        let buttonRow = sender.tag
+        let habit = appDelegate.habits[buttonRow]
+        debugPrint(habit)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,6 +78,8 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.plusButton.tag = indexPath.row
         cell.plusButton.addTarget(self, action: #selector(HabitsViewController.plusButtonClicked(_:)), forControlEvents: .TouchUpInside)
         cell.minusButton.hidden = !habit.hasMinusButton
+        cell.minusButton.tag = indexPath.row
+        cell.minusButton.addTarget(self, action: #selector(HabitsViewController.minusButtonClicked(_:)), forControlEvents: .TouchUpInside)
         return cell
     }
     
