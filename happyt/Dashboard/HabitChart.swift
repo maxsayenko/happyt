@@ -15,14 +15,14 @@ struct HabitChart {
     init(frame: CGRect, habit: Habit) {
         let chartFrame = CGRectMake(10, 40, frame.width - 20, frame.height - 45)
         
-        var coordinates: [(Int, Int)] = []
+        var coordinates: [(Int, Int)] = [(0, 0)]
         var yValue = 0
         var minY = 0
         var maxY = 1
         
         let today = NSDate()
         let unitFlags: NSCalendarUnit = [.Hour, .Day, .Month, .Year, .Minute]
-        let todayComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: today)
+        //let todayComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: today)
         let yesterday = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -1, toDate: today, options: [])
         
         debugPrint(today)

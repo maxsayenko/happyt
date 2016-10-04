@@ -21,10 +21,18 @@ class StatsViewController: UIViewController {
         super.viewWillAppear(animated)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.subviews.forEach({ $0.removeFromSuperview() })
+        getGraphs()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getGraphs()
+    }
+    
+    
+    func getGraphs() {
         let habits = appDelegate.habits
         
         var offsetY: CGFloat = 10
@@ -33,7 +41,7 @@ class StatsViewController: UIViewController {
         let containerHeight: CGFloat = 300
         for habit in habits {
             let container = HabitContainer(frame: CGRectMake(10, offsetY, containerWidth, containerHeight), habit: habit)
-
+            
             contentView.addSubview(container.view)
             charts.append(container.chart)
             
@@ -45,21 +53,5 @@ class StatsViewController: UIViewController {
         let heightConstraint = NSLayoutConstraint(item: contentView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: contentHeight)
         NSLayoutConstraint.activateConstraints([heightConstraint])
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
