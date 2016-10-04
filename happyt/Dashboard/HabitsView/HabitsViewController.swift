@@ -51,15 +51,15 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func plusButtonClicked(sender:UIButton) {
         let buttonRow = sender.tag
-        let habit = appDelegate.habits[buttonRow]
-        let event = Event(habitId: habit.id, isPositive: true)
+        //let habit = appDelegate.habits[buttonRow]
+        //let event = Event(habitId: habit.id, isPositive: true)
         //appDelegate.habits[buttonRow].events.append(event)
     }
     
     func minusButtonClicked(sender:UIButton) {
         let buttonRow = sender.tag
-        let habit = appDelegate.habits[buttonRow]
-        let event = Event(habitId: habit.id, isPositive: false)
+        //let habit = appDelegate.habits[buttonRow]
+        //let event = Event(habitId: habit.id, isPositive: false)
         //appDelegate.habits[buttonRow].events.append(event)
     }
 

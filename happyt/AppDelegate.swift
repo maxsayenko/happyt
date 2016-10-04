@@ -29,31 +29,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        var habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true, insertIntoManagedObjectContext: sharedContext)
-        for hour in [3, 7, 10, 17, 19, 23] {
-            let c = NSDateComponents()
-            c.year = 2016
-            c.month = 10
-            c.day = 3
-            c.hour = hour
-            c.minute = 15
-            c.second = 37
-            let date = NSCalendar.currentCalendar().dateFromComponents(c)
-            
-            var positive = true
-            if (hour == 3 || hour == 11 || hour == 19) {
-                positive = false
-            }
-            
-            let event = Event(habitId: habit1.id, date: date!, isPositive: positive)
-            //habit1.events.append(event)
-        }
+//        let habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true, context: sharedContext)
+//        var events1: [Event] = []
+//        for hour in [3, 7, 10, 17, 19, 23] {
+//            let c = NSDateComponents()
+//            c.year = 2016
+//            c.month = 10
+//            c.day = 3
+//            c.hour = hour
+//            c.minute = 15
+//            c.second = 37
+//            let date = NSCalendar.currentCalendar().dateFromComponents(c)
+//            
+//            var positive = true
+//            if (hour == 3 || hour == 11 || hour == 19) {
+//                positive = false
+//            }
+//            
+//            let event = Event(date: date!, isPositive: positive, context: sharedContext)
+//            events1.append(event)
+//        }
+//        habit1.events = NSOrderedSet(array: events1)
+//        habits.append(habit1)
+//        
+//        habits.append(Habit(name: "new one", hasPlusButton: true, hasMinusButton: false, context: sharedContext))
+//        habits.append(Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false, context: sharedContext))
+//        saveContext()
         
-        habits.append(habit1)
-        habits.append(Habit(name: "new one", hasPlusButton: true, hasMinusButton: false, insertIntoManagedObjectContext: sharedContext))
-        habits.append(Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false, insertIntoManagedObjectContext: sharedContext))
-        saveContext()
-            
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

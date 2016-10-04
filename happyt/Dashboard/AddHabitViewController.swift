@@ -32,7 +32,7 @@ class AddHabitViewController: UITableViewController {
     
     @IBAction func SaveClick(sender: UIBarButtonItem) {
         // TODO: null checks
-        let newHabit = Habit(name: nameText.text!, hasPlusButton: positiveActionSwitch.on, hasMinusButton: negativeActionSwitch.on, insertIntoManagedObjectContext: sharedContext)
+        let newHabit = Habit(name: nameText.text!, hasPlusButton: positiveActionSwitch.on, hasMinusButton: negativeActionSwitch.on, context: sharedContext)
 
         appDelegate.habits.append(newHabit)
         self.dismissViewControllerAnimated(true, completion: {})

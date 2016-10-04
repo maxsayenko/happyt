@@ -5,21 +5,35 @@
 //  Created by Max Saienko on 9/30/16.
 //  Copyright © 2016 Max Saienko. All rights reserved.
 //
+import CoreData
 
-struct Event {
-    var habitId: String
-    var date: NSDate
-    var isPositive: Bool
+class Event: NSManagedObject {
+    //@NSManaged var habitId: String
+    @NSManaged var date: NSDate
+    @NSManaged var isPositive: NSNumber
     
-    init(habitId id: String, isPositive: Bool) {
+    // Core Data - relational property
+    @NSManaged var habit: Habit?
+    
+    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+    }
+    
+    init(isPositive: Bool, context: NSManagedObjectContext) {
+        let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: context)!
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+        
         self.date = NSDate()
-        self.habitId = id
+        //self.habitId = id
         self.isPositive = isPositive
     }
     
-    init(habitId id: String, date: NSDate, isPositive: Bool) {
+    init(date: NSDate, isPositive: Bool, context: NSManagedObjectContext) {
+        let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: context)!
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+        
         self.date = date
-        self.habitId = id
+        //self.habitId = id
         self.isPositive = isPositive
     }
 }

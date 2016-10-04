@@ -19,9 +19,9 @@ class Habit: NSManagedObject {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
     }
     
-    init(name: String, hasPlusButton: Bool, hasMinusButton: Bool, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+    init(name: String, hasPlusButton: Bool, hasMinusButton: Bool, context: NSManagedObjectContext) {
         
-        let entity = NSEntityDescription.entityForName("Habit", inManagedObjectContext: context!)!
+        let entity = NSEntityDescription.entityForName("Habit", inManagedObjectContext: context)!
         super.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.name = name
