@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,10 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var habits: [Habit] = []
     var userInfo: UserInfo?
+    
+    // TODO: Remove it
+    // Core Data - Convenience methods
+    lazy var sharedContext: NSManagedObjectContext =  {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }()
+    
+    func saveContext() {
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        var habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true)
+        var habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true, insertIntoManagedObjectContext: sharedContext)
         for hour in [3, 7, 10, 17, 19, 23] {
             let c = NSDateComponents()
             c.year = 2016
@@ -35,12 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             let event = Event(habitId: habit1.id, date: date!, isPositive: positive)
-            habit1.events.append(event)
+            //habit1.events.append(event)
         }
         
         habits.append(habit1)
-        habits.append(Habit(name: "new one", hasPlusButton: true, hasMinusButton: false))
-        habits.append(Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false))
+        habits.append(Habit(name: "new one", hasPlusButton: true, hasMinusButton: false, insertIntoManagedObjectContext: sharedContext))
+        habits.append(Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false, insertIntoManagedObjectContext: sharedContext))
+        saveContext()
             
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

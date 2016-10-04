@@ -28,6 +28,8 @@
 		E2B3873F1D9F996200BCC1D7 /* HabitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */; };
 		E2B387411D9FB20500BCC1D7 /* HabitChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B387401D9FB20500BCC1D7 /* HabitChart.swift */; };
 		E2E11B7B1DA370A3008FCE22 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B7A1DA370A3008FCE22 /* Date.swift */; };
+		E2E11B811DA3814B008FCE22 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B7F1DA3814B008FCE22 /* Model.xcdatamodeld */; };
+		E2E11B831DA382D3008FCE22 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B821DA382D3008FCE22 /* CoreDataStackManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitContainer.swift; sourceTree = "<group>"; };
 		E2B387401D9FB20500BCC1D7 /* HabitChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitChart.swift; sourceTree = "<group>"; };
 		E2E11B7A1DA370A3008FCE22 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		E2E11B801DA3814B008FCE22 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E2E11B821DA382D3008FCE22 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				E20A3ADF1D7559610010E86B /* LaunchScreen.storyboard */,
 				E20A3AE21D7559620010E86B /* Info.plist */,
 				E20A3AD61D7559610010E86B /* AppDelegate.swift */,
+				E2E11B7F1DA3814B008FCE22 /* Model.xcdatamodeld */,
+				E2E11B821DA382D3008FCE22 /* CoreDataStackManager.swift */,
 			);
 			path = happyt;
 			sourceTree = "<group>";
@@ -320,10 +326,12 @@
 				E20A3B031D90CD3F0010E86B /* Habit.swift in Sources */,
 				E20A3AD91D7559610010E86B /* LoginViewController.swift in Sources */,
 				E20A3AF81D772A390010E86B /* HabitsViewController.swift in Sources */,
+				E2E11B811DA3814B008FCE22 /* Model.xcdatamodeld in Sources */,
 				E20A3B001D8DF71E0010E86B /* AddHabitViewController.swift in Sources */,
 				E2B3873B1D9F061300BCC1D7 /* Event.swift in Sources */,
 				E264109F1D96EF8C0020B0E6 /* UserInfo.swift in Sources */,
 				E26410A41D972C390020B0E6 /* Service.swift in Sources */,
+				E2E11B831DA382D3008FCE22 /* CoreDataStackManager.swift in Sources */,
 				E2B3873F1D9F996200BCC1D7 /* HabitContainer.swift in Sources */,
 				E2B387411D9FB20500BCC1D7 /* HabitChart.swift in Sources */,
 				E20A3AD71D7559610010E86B /* AppDelegate.swift in Sources */,
@@ -492,6 +500,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2E11B7F1DA3814B008FCE22 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2E11B801DA3814B008FCE22 /* Model.xcdatamodel */,
+			);
+			currentVersion = E2E11B801DA3814B008FCE22 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E20A3ACB1D7559610010E86B /* Project object */;
 }

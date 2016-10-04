@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class AddHabitViewController: UITableViewController {
+    lazy var sharedContext: NSManagedObjectContext =  {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }()
+    
+    func saveContext() {
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     @IBOutlet var nameText: UITextField!
@@ -23,7 +32,7 @@ class AddHabitViewController: UITableViewController {
     
     @IBAction func SaveClick(sender: UIBarButtonItem) {
         // TODO: null checks
-        let newHabit = Habit(name: nameText.text!, hasPlusButton: positiveActionSwitch.on, hasMinusButton: negativeActionSwitch.on)
+        let newHabit = Habit(name: nameText.text!, hasPlusButton: positiveActionSwitch.on, hasMinusButton: negativeActionSwitch.on, insertIntoManagedObjectContext: sharedContext)
 
         appDelegate.habits.append(newHabit)
         self.dismissViewControllerAnimated(true, completion: {})

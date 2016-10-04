@@ -33,32 +33,32 @@ struct HabitChart {
         //debugPrint(components)
         
         // Last 24 hours of events
-        let filteredEvents = habit.events.filter() { event in
-            return event.date.isGreaterThanDate(yesterday!) && event.date.isLessThanDate(today)
-        }
+//        let filteredEvents = habit.events.filter() { event in
+//            return event.date.isGreaterThanDate(yesterday!) && event.date.isLessThanDate(today)
+//        }
         
-        debugPrint("total events count = \(habit.events.count) and filtered = \(filteredEvents.count)")
+        //debugPrint("total events count = \(habit.events.count) and filtered = \(filteredEvents.count)")
         
-        for event in filteredEvents {
-            let dateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: event.date)
-            let hour = dateComponents.hour
-//            let day = dateComponents.day
+//        for event in habit.events {
+//            let dateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: event.date)
+//            let hour = dateComponents.hour
+////            let day = dateComponents.day
+////            
+////            debugPrint("==========")
+////            debugPrint(day)
+////            debugPrint(hour)
 //            
-//            debugPrint("==========")
-//            debugPrint(day)
-//            debugPrint(hour)
-            
-            let multiplier = event.isPositive ? 1 : -1
-            yValue += 1 * multiplier
-            
-            if (yValue > maxY) {
-                maxY = yValue
-            } else if (yValue < minY) {
-                minY = yValue
-            }
-            
-            coordinates.append((hour, yValue))
-        }
+//            let multiplier = event.isPositive ? 1 : -1
+//            yValue += 1 * multiplier
+//            
+//            if (yValue > maxY) {
+//                maxY = yValue
+//            } else if (yValue < minY) {
+//                minY = yValue
+//            }
+//            
+//            coordinates.append((hour, yValue))
+//        }
 
         //let chartPoints: [ChartPoint] = [(2, 2), (4, -4), (6, 6), (8, 10), (12, 9)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
         
