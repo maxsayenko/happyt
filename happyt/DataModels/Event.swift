@@ -16,4 +16,10 @@ struct Event {
         self.habitId = id
         self.isPositive = isPositive
     }
+    
+    init(habitId id: String, date: NSDate, isPositive: Bool) {
+        self.date = date
+        self.habitId = id
+        self.isPositive = isPositive
+    }
 }

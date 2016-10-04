@@ -8,10 +8,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--loginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="loginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="happyt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" title="loginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="happyt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="396" y="88"/>
         </scene>
-        <!--Habits-->
+        <!--habitsViewController-->
         <scene sceneID="t7c-PB-wGw">
             <objects>
-                <viewController storyboardIdentifier="dashboardViewController" id="2V1-MR-Uo1" customClass="HabitsViewController" customModule="happyt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dashboardViewController" title="habitsViewController" id="2V1-MR-Uo1" customClass="HabitsViewController" customModule="happyt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ybg-6k-BO5"/>
                         <viewControllerLayoutGuide type="bottom" id="mqh-BS-CQz"/>
@@ -228,10 +228,10 @@
             </objects>
             <point key="canvasLocation" x="1878" y="-274"/>
         </scene>
-        <!--Add-->
+        <!--addHabitViewController-->
         <scene sceneID="C9F-bF-UHj">
             <objects>
-                <tableViewController id="LnN-2Z-Hav" customClass="AddHabitViewController" customModule="happyt" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="addHabitViewController" id="LnN-2Z-Hav" customClass="AddHabitViewController" customModule="happyt" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="NEN-z0-0BK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -407,10 +407,10 @@
             </objects>
             <point key="canvasLocation" x="3518" y="-274"/>
         </scene>
-        <!--Stats-->
+        <!--statsViewController-->
         <scene sceneID="bQk-D0-XOd">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="MAt-40-Ezc" customClass="StatsViewController" customModule="happyt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="statsViewController" automaticallyAdjustsScrollViewInsets="NO" id="MAt-40-Ezc" customClass="StatsViewController" customModule="happyt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fw3-ZO-tbD"/>
                         <viewControllerLayoutGuide type="bottom" id="XcV-d0-NyM"/>
@@ -483,10 +483,10 @@
             </objects>
             <point key="canvasLocation" x="1878" y="388"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--navigationController-->
         <scene sceneID="Tww-rq-1KN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m9W-MC-8Cd" sceneMemberID="viewController">
+                <navigationController title="navigationController" automaticallyAdjustsScrollViewInsets="NO" id="m9W-MC-8Cd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cdh-9u-pce">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -501,11 +501,12 @@
             </objects>
             <point key="canvasLocation" x="-416" y="88"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--tabBarController-->
         <scene sceneID="LRm-Vv-pq4">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JBP-Ri-sUt" sceneMemberID="viewController">
+                <tabBarController title="tabBarController" automaticallyAdjustsScrollViewInsets="NO" id="JBP-Ri-sUt" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="pjl-k1-Tsn">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -519,10 +520,10 @@
             </objects>
             <point key="canvasLocation" x="1114" y="88"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--addNavigationViewController-->
         <scene sceneID="cBi-hB-ZcX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E6t-yS-MxF" sceneMemberID="viewController">
+                <navigationController title="addNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="E6t-yS-MxF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Feb-1F-ckl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

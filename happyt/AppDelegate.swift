@@ -18,12 +18,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        habits.append(Habit(name: "test1", hasPlusButton: true, hasMinusButton: true))
+        var habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true)
+        for hour in [3,5,6,7,8] {
+            let c = NSDateComponents()
+            c.year = 2016
+            c.month = 10
+            c.day = 3
+            c.hour = hour
+            c.minute = 15
+            c.second = 37
+            let gregorian = NSCalendar(identifier:NSCalendarIdentifierGregorian)
+            let date = gregorian!.dateFromComponents(c)
+            
+            let event = Event(habitId: habit1.id, date: date!, isPositive: true)
+            habit1.events.append(event)
+        }
+        
+
+        
+        habits.append(habit1)
         habits.append(Habit(name: "new one", hasPlusButton: true, hasMinusButton: false))
         habits.append(Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false))
             
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+    
+    func application (application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        return checkOrientation(self.window?.rootViewController)
     }
     
     // The “OpenURL” method allows your app to open again after the user has validated their login credentials.
@@ -61,6 +83,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    
+    
+    func checkOrientation(viewController: UIViewController?) -> UIInterfaceOrientationMask {
+//        debugPrint("checkOrientation")
+//        debugPrint(viewController?.title)
+        if (viewController == nil) {
+            return UIInterfaceOrientationMask.Portrait
+        } else if (viewController is StatsViewController) {
+//            debugPrint("StatsViewController")
+            return UIInterfaceOrientationMask.Portrait
+        } else if(viewController?.title == "navigationController") {
+//            debugPrint("is Navigation")
+            
+            
+            if let tabBarController = viewController?.tabBarController{
+//                debugPrint("=======")
+//                debugPrint(tabBarController.title)
+            }
+        }
+        return UIInterfaceOrientationMask.Portrait
+//        } else if viewController is MyTabBarController {
+//            if let tabBarController = viewController as? MyTabBarController,
+//                navigationViewControllers = tabBarController.viewControllers as? [MyNavigationController] {
+//                return checkOrientation(navigationViewControllers[tabBarController.selectedIndex].visibleViewController)
+//            } else {
+//                return UIInterfaceOrientationMask.Portrait
+//            }
+//            
+//        } else {
+//            return checkOrientation(viewController!.presentedViewController)
+//        }
     }
 
 
