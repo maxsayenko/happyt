@@ -8,10 +8,21 @@
 
 import UIKit
 import SwiftCharts
+import CoreData
 
 class StatsViewController: UIViewController {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    // Core Data - Convenience methods
+    lazy var sharedContext: NSManagedObjectContext =  {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }()
+    
+    func saveContext() {
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    var habits: [Habit] = []
     var charts: [Chart] = []
 
     @IBOutlet var scrollView: UIScrollView!
@@ -28,6 +39,14 @@ class StatsViewController: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
+        // CoreData - fetching habits
+        let fetchRequest = NSFetchRequest(entityName: "Habit")
+        do {
+            habits = try sharedContext.executeFetchRequest(fetchRequest) as! [Habit]
+        } catch let error as NSError {
+            debugPrint("Habit Fetch failed: \(error.localizedDescription)")
+        }
+        
         contentView.subviews.forEach({ $0.removeFromSuperview() })
         getGraphs()
     }
@@ -37,10 +56,8 @@ class StatsViewController: UIViewController {
         getGraphs()
     }
     
-    
     func getGraphs() {
         let habits = appDelegate.habits
-        
         var offsetY: CGFloat = 10
         var contentHeight: CGFloat = 0
         let containerWidth = view.frame.width - 22
@@ -52,7 +69,7 @@ class StatsViewController: UIViewController {
             charts.append(container.chart)
             
             offsetY = 10 + container.view.frame.maxY
-            contentHeight = container.view.frame.maxY
+            contentHeight = container.view.frame.maxY - 50
         }
         
         // Setting content Height for scroll view

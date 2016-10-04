@@ -33,11 +33,11 @@ struct HabitChart {
         //debugPrint(components)
         
         // Last 24 hours of events
-//        let filteredEvents = habit.events.filter() { event in
-//            return event.date.isGreaterThanDate(yesterday!) && event.date.isLessThanDate(today)
-//        }
+        let filteredEvents = habit.events.filter() { event in
+            return event.date.isGreaterThanDate(yesterday!) && event.date.isLessThanDate(today)
+        }
         
-        //debugPrint("total events count = \(habit.events.count) and filtered = \(filteredEvents.count)")
+        debugPrint("total events count = \(habit.events.count) and filtered = \(filteredEvents.count)")
         
 //        for event in habit.events {
 //            let dateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: event.date)

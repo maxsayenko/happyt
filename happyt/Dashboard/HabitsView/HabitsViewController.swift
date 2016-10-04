@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    // Core Data - Convenience methods
+    lazy var sharedContext: NSManagedObjectContext =  {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }()
+    
+    func saveContext() {
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    var habits: [Habit] = []
     
     @IBOutlet var userProfImageView: UIImageView!
     
@@ -25,7 +37,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         debugPrint("Habits")
-        debugPrint(appDelegate.habits)
+        //debugPrint(appDelegate.habits)
         self.navigationController?.navigationBarHidden = true
 
         // TODO: Move to some view init function
@@ -46,6 +58,14 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }.error { err in
                     debugPrint("Error while fetching Image from url: \(err)")
             }
+        }
+        
+        // CoreData - fetching habits
+        let fetchRequest = NSFetchRequest(entityName: "Habit")
+        do {
+            habits = try sharedContext.executeFetchRequest(fetchRequest) as! [Habit]
+        } catch let error as NSError {
+            debugPrint("Habit Fetch failed: \(error.localizedDescription)")
         }
     }
     
@@ -69,12 +89,12 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return appDelegate.habits.count
+        return habits.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCellWithIdentifier("habitCell")! as! HabitTableViewCell
-        let habit: Habit = appDelegate.habits[indexPath.row]
+        let habit: Habit = habits[indexPath.row]
         cell.nameLabel.text = habit.name
         
         cell.plusButton.hidden = !habit.hasPlusButton
@@ -89,8 +109,8 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedHabit = appDelegate.habits[indexPath.row]
+        let selectedHabit = habits[indexPath.row]
         debugPrint("cell touched at index: \(indexPath.row) with name: \(selectedHabit.name)")
-        debugPrint(appDelegate.habits[indexPath.row])
+        debugPrint(habits[indexPath.row])
     }
 }
