@@ -17,10 +17,19 @@ struct HabitChart {
         
         var coordinates: [(Int, Int)] = []
         var yValue = 0
+        var minY = 0
+        var maxY = 1
         for event in habit.events {
             let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: event.date)
             let multiplier = event.isPositive ? 1 : -1
             yValue += 1 * multiplier
+            
+            if (yValue > maxY) {
+                maxY = yValue
+            } else if (yValue < minY) {
+                minY = yValue
+            }
+            
             coordinates.append((hour, yValue))
         }
 
@@ -30,7 +39,7 @@ struct HabitChart {
         
         // Axis values
         let xValues = 0.stride(through: 24, by: 3).map {ChartAxisValueInt($0)}
-        let yValues = (-4).stride(through: 10, by: 2).map {ChartAxisValueInt($0)}
+        let yValues = (minY).stride(through: maxY, by: 1).map {ChartAxisValueInt($0)}
         
         let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
         
