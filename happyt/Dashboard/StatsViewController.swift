@@ -35,11 +35,9 @@ class StatsViewController: UIViewController {
         let containerHeight: CGFloat = 300
         for habit in habits {
             let container = HabitContainer(frame: CGRectMake(10, offsetY, containerWidth, containerHeight), habit: habit)
+
             contentView.addSubview(container.view)
-            
-            let chart = HabitChart(frame: container.view.frame, habit: habit)
-            self.charts.append(chart.chart)
-            container.view.addSubview(chart.view)
+            charts.append(container.chart)
             
             offsetY = 10 + container.view.frame.maxY
             contentHeight = container.view.frame.maxY
