@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         var habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true)
-        for hour in [3, 5, 6, 7, 8, 10, 11, 12, 17, 19, 21, 23] {
+        for hour in [3, 7, 10, 17, 19, 23] {
             let c = NSDateComponents()
             c.year = 2016
             c.month = 10
@@ -27,8 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             c.hour = hour
             c.minute = 15
             c.second = 37
-            let gregorian = NSCalendar(identifier:NSCalendarIdentifierGregorian)
-            let date = gregorian!.dateFromComponents(c)
+            let date = NSCalendar.currentCalendar().dateFromComponents(c)
             
             var positive = true
             if (hour == 3 || hour == 11 || hour == 19) {

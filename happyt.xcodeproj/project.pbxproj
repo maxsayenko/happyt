@@ -27,6 +27,7 @@
 		E2B3873B1D9F061300BCC1D7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3873A1D9F061300BCC1D7 /* Event.swift */; };
 		E2B3873F1D9F996200BCC1D7 /* HabitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */; };
 		E2B387411D9FB20500BCC1D7 /* HabitChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B387401D9FB20500BCC1D7 /* HabitChart.swift */; };
+		E2E11B7B1DA370A3008FCE22 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B7A1DA370A3008FCE22 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		E2B3873A1D9F061300BCC1D7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitContainer.swift; sourceTree = "<group>"; };
 		E2B387401D9FB20500BCC1D7 /* HabitChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitChart.swift; sourceTree = "<group>"; };
+		E2E11B7A1DA370A3008FCE22 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		E20A3AD51D7559610010E86B /* happyt */ = {
 			isa = PBXGroup;
 			children = (
+				E2E11B791DA3708A008FCE22 /* Extensions */,
 				E26410A21D972BF70020B0E6 /* Services */,
 				E20A3B011D90CD140010E86B /* DataModels */,
 				E20A3AFA1D8DD8BD0010E86B /* Login */,
@@ -174,6 +177,14 @@
 				E2B387401D9FB20500BCC1D7 /* HabitChart.swift */,
 			);
 			name = StatsView;
+			sourceTree = "<group>";
+		};
+		E2E11B791DA3708A008FCE22 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2E11B7A1DA370A3008FCE22 /* Date.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		E371D0AC9048DA08C3A0B9D6 /* Frameworks */ = {
@@ -317,6 +328,7 @@
 				E2B387411D9FB20500BCC1D7 /* HabitChart.swift in Sources */,
 				E20A3AD71D7559610010E86B /* AppDelegate.swift in Sources */,
 				E248B4E81D93B0880039CCB4 /* HabitTableViewCell.swift in Sources */,
+				E2E11B7B1DA370A3008FCE22 /* Date.swift in Sources */,
 				E20A3AFC1D8DD9520010E86B /* StatsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

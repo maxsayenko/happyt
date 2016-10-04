@@ -26,8 +26,6 @@ class StatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let habits = appDelegate.habits
-        debugPrint(scrollView.contentSize)
-        debugPrint(contentView.frame)
         
         var offsetY: CGFloat = 10
         var contentHeight: CGFloat = 0

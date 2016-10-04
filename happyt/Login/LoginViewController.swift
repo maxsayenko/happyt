@@ -14,6 +14,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         debugPrint(NSDate())
+        let date = NSDate();
+        let dateFormatter = NSDateFormatter()
+        //To prevent displaying either date or time, set the desired style to NoStyle.
+        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle //Set time style
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle //Set date style
+        dateFormatter.timeZone = NSTimeZone()
+        
+        let localDate = dateFormatter.stringFromDate(date)
+        
+        debugPrint("UTC Time")
+        debugPrint(date)
+        debugPrint("Local Time")
+        debugPrint(localDate)
         // Do any additional setup after loading the view, typically from a nib.
         
         if (FBSDKAccessToken.currentAccessToken() != nil)

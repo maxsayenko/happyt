@@ -19,8 +19,35 @@ struct HabitChart {
         var yValue = 0
         var minY = 0
         var maxY = 1
-        for event in habit.events {
-            let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: event.date)
+        
+        let today = NSDate()
+        let unitFlags: NSCalendarUnit = [.Hour, .Day, .Month, .Year, .Minute]
+        let todayComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: today)
+        let yesterday = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -1, toDate: today, options: [])
+        
+        debugPrint(today)
+        debugPrint("Yesterday")
+        debugPrint(yesterday)
+        
+        //let components = NSCalendar.currentCalendar().components(unitFlags, fromDate: today)
+        //debugPrint(components)
+        
+        // Last 24 hours of events
+        let filteredEvents = habit.events.filter() { event in
+            return event.date.isGreaterThanDate(yesterday!) && event.date.isLessThanDate(today)
+        }
+        
+        debugPrint("total events count = \(habit.events.count) and filtered = \(filteredEvents.count)")
+        
+        for event in filteredEvents {
+            let dateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: event.date)
+            let hour = dateComponents.hour
+            let day = dateComponents.day
+            
+            debugPrint("==========")
+            debugPrint(day)
+            debugPrint(hour)
+            
             let multiplier = event.isPositive ? 1 : -1
             yValue += 1 * multiplier
             
@@ -37,8 +64,7 @@ struct HabitChart {
         
         let chartPoints: [ChartPoint] = coordinates.map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
         
-        // Axis values
-        let xValues = 0.stride(through: 24, by: 3).map {ChartAxisValueInt($0)}
+        let xValues = 0.stride(to: 24, by: 3).map {ChartAxisValueInt($0)}
         let yValues = (minY).stride(through: maxY, by: 1).map {ChartAxisValueInt($0)}
         
         let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
