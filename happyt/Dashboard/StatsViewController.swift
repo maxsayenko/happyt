@@ -16,6 +16,12 @@ class StatsViewController: UIViewController {
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
+    @IBAction func todayButtonTouch(sender: UIButton) {
+        debugPrint("today")
+    }
+    @IBAction func weekButtonTouch(sender: UIButton) {
+        debugPrint("week")
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
