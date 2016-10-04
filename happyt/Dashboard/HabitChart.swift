@@ -42,11 +42,11 @@ struct HabitChart {
         for event in filteredEvents {
             let dateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: event.date)
             let hour = dateComponents.hour
-            let day = dateComponents.day
-            
-            debugPrint("==========")
-            debugPrint(day)
-            debugPrint(hour)
+//            let day = dateComponents.day
+//            
+//            debugPrint("==========")
+//            debugPrint(day)
+//            debugPrint(hour)
             
             let multiplier = event.isPositive ? 1 : -1
             yValue += 1 * multiplier
@@ -64,7 +64,7 @@ struct HabitChart {
         
         let chartPoints: [ChartPoint] = coordinates.map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
         
-        let xValues = 0.stride(to: 24, by: 3).map {ChartAxisValueInt($0)}
+        let xValues = [0, 3, 6, 9, 12, 15, 18, 21, 23].map {ChartAxisValueInt($0)}
         let yValues = (minY).stride(through: maxY, by: 1).map {ChartAxisValueInt($0)}
         
         let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
