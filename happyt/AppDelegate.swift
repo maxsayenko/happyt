@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         var habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true)
-        for hour in [3,5,6,7,8] {
+        for hour in [3, 5, 6, 7, 8, 10, 11, 12, 17, 19, 21, 23] {
             let c = NSDateComponents()
             c.year = 2016
             c.month = 10
@@ -30,11 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let gregorian = NSCalendar(identifier:NSCalendarIdentifierGregorian)
             let date = gregorian!.dateFromComponents(c)
             
-            let event = Event(habitId: habit1.id, date: date!, isPositive: true)
+            var positive = true
+            if (hour == 3 || hour == 11 || hour == 19) {
+                positive = false
+            }
+            
+            let event = Event(habitId: habit1.id, date: date!, isPositive: positive)
             habit1.events.append(event)
         }
-        
-
         
         habits.append(habit1)
         habits.append(Habit(name: "new one", hasPlusButton: true, hasMinusButton: false))

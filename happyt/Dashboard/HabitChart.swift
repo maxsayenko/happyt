@@ -15,16 +15,21 @@ struct HabitChart {
     init(frame: CGRect, habit: Habit) {
         let chartFrame = CGRectMake(10, 40, frame.width - 20, frame.height - 45)
         
-        let coordinates = []
+        var coordinates: [(Int, Int)] = []
+        var yValue = 0
         for event in habit.events {
             let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: event.date)
-            debugPrint(hour)
+            let multiplier = event.isPositive ? 1 : -1
+            yValue += 1 * multiplier
+            coordinates.append((hour, yValue))
         }
+
+        //let chartPoints: [ChartPoint] = [(2, 2), (4, -4), (6, 6), (8, 10), (12, 9)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
         
-        let chartPoints: [ChartPoint] = [(2, 2), (4, -4), (6, 6), (8, 10), (12, 9)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
+        let chartPoints: [ChartPoint] = coordinates.map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
         
+        // Axis values
         let xValues = 0.stride(through: 24, by: 3).map {ChartAxisValueInt($0)}
-        //let xValues = [ChartAxisValueInt(-2), ChartAxisValueInt(0), ChartAxisValueInt(3), ChartAxisValueInt(5)]
         let yValues = (-4).stride(through: 10, by: 2).map {ChartAxisValueInt($0)}
         
         let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
