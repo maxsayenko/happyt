@@ -29,7 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true, context: sharedContext)
+        let context = CoreDataStackManager.sharedInstance().scratchpadContext
+        //let context = sharedContext
+        
+        let habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true, context: context)
         var events1: [Event] = []
         for hour in [3, 7, 10, 17, 19, 23] {
             let c = NSDateComponents()
@@ -46,15 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 positive = false
             }
             
-            let event = Event(date: date!, isPositive: positive, context: sharedContext)
+            let event = Event(date: date!, isPositive: positive, context: context)
             events1.append(event)
         }
         habit1.events = NSOrderedSet(array: events1)
         habits.append(habit1)
         
-        habits.append(Habit(name: "new one", hasPlusButton: true, hasMinusButton: false, context: sharedContext))
-        habits.append(Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false, context: sharedContext))
-        //saveContext()
+        habits.append(Habit(name: "new one", hasPlusButton: true, hasMinusButton: false, context: context))
+        habits.append(Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false, context: context))
+        saveContext()
         
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
