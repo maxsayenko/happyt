@@ -14,7 +14,7 @@ struct HabitContainer {
     var view: UIView
     var chart: Chart
     
-    init(frame: CGRect, habit: Habit) {
+    init(frame: CGRect, habit: Habit, type: ChartType) {
         let habitContainerView = UIView(frame: frame)
         habitContainerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -28,7 +28,11 @@ struct HabitContainer {
         habitContainerView.addSubview(nameLabel)
         
         // Chart
-        let chart = HabitChart(frame: habitContainerView.frame, habit: habit)
+        var chart: HabitChart = DayChart(frame: habitContainerView.frame, habit: habit)
+        if(type == ChartType.Week) {
+            chart = WeekChart(frame: habitContainerView.frame, habit: habit)
+        }
+
         self.chart = chart.chart
         habitContainerView.addSubview(chart.view)
         

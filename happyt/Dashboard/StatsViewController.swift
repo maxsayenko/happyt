@@ -30,10 +30,12 @@ class StatsViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
     @IBAction func todayButtonTouch(sender: UIButton) {
-        debugPrint("today")
+        contentView.subviews.forEach({ $0.removeFromSuperview() })
+        getGraphs(ChartType.Day)
     }
     @IBAction func weekButtonTouch(sender: UIButton) {
-        debugPrint("week")
+        contentView.subviews.forEach({ $0.removeFromSuperview() })
+        getGraphs(ChartType.Week)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -50,7 +52,7 @@ class StatsViewController: UIViewController {
         }
         
         contentView.subviews.forEach({ $0.removeFromSuperview() })
-        getGraphs()
+        getGraphs(ChartType.Day)
     }
     
     override func viewDidLoad() {
@@ -60,13 +62,13 @@ class StatsViewController: UIViewController {
         contentView.addConstraint(heightConstraint)
     }
     
-    func getGraphs() {
+    func getGraphs(type: ChartType) {
         var offsetY: CGFloat = 10
         var contentHeight: CGFloat = 0
         let containerWidth = view.frame.width - 22
         let containerHeight: CGFloat = 300
         for habit in habits {
-            let container = HabitContainer(frame: CGRectMake(10, offsetY, containerWidth, containerHeight), habit: habit)
+            let container = HabitContainer(frame: CGRectMake(10, offsetY, containerWidth, containerHeight), habit: habit, type: type)
             
             contentView.addSubview(container.view)
             charts.append(container.chart)
