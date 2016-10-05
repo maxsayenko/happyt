@@ -115,4 +115,16 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         debugPrint("cell touched at index: \(indexPath.row) with name: \(selectedHabit.name)")
         debugPrint(habits[indexPath.row])
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            let habit = habits[indexPath.row]
+            sharedContext.deleteObject(habit)
+            
+            habits.removeAtIndex(indexPath.row)
+            table.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Bottom)
+
+            saveContext()
+        }
+    }
 }
