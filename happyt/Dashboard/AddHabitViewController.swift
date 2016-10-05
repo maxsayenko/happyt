@@ -18,12 +18,8 @@ class AddHabitViewController: UITableViewController {
         CoreDataStackManager.sharedInstance().saveContext()
     }
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
     @IBOutlet var nameText: UITextField!
-    
     @IBOutlet var positiveActionSwitch: UISwitch!
-    
     @IBOutlet var negativeActionSwitch: UISwitch!
     
     @IBAction func CancelClick(sender: UIBarButtonItem) {
@@ -32,9 +28,10 @@ class AddHabitViewController: UITableViewController {
     
     @IBAction func SaveClick(sender: UIBarButtonItem) {
         // TODO: null checks
-        let newHabit = Habit(name: nameText.text!, hasPlusButton: positiveActionSwitch.on, hasMinusButton: negativeActionSwitch.on, context: sharedContext)
+        let habit
+            = Habit(name: nameText.text!, hasPlusButton: positiveActionSwitch.on, hasMinusButton: negativeActionSwitch.on, context: sharedContext)
 
-        appDelegate.habits.append(newHabit)
+        saveContext()
         self.dismissViewControllerAnimated(true, completion: {})
     }
     

@@ -31,6 +31,15 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // CoreData - fetching habits
+        let fetchRequest = NSFetchRequest(entityName: "Habit")
+        do {
+            habits = try sharedContext.executeFetchRequest(fetchRequest) as! [Habit]
+        } catch let error as NSError {
+            debugPrint("Habit Fetch failed: \(error.localizedDescription)")
+        }
+        
         table.reloadData()
     }
     
@@ -58,14 +67,6 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }.error { err in
                     debugPrint("Error while fetching Image from url: \(err)")
             }
-        }
-        
-        // CoreData - fetching habits
-        let fetchRequest = NSFetchRequest(entityName: "Habit")
-        do {
-            habits = try sharedContext.executeFetchRequest(fetchRequest) as! [Habit]
-        } catch let error as NSError {
-            debugPrint("Habit Fetch failed: \(error.localizedDescription)")
         }
     }
     
