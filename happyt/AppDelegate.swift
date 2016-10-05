@@ -107,34 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func checkOrientation(viewController: UIViewController?) -> UIInterfaceOrientationMask {
-//        debugPrint("checkOrientation")
-//        debugPrint(viewController?.title)
-        if (viewController == nil) {
-            return UIInterfaceOrientationMask.Portrait
-        } else if (viewController is StatsViewController) {
-//            debugPrint("StatsViewController")
-            return UIInterfaceOrientationMask.Portrait
-        } else if(viewController?.title == "navigationController") {
-//            debugPrint("is Navigation")
-            
-            
-            if let tabBarController = viewController?.tabBarController{
-//                debugPrint("=======")
-//                debugPrint(tabBarController.title)
-            }
-        }
         return UIInterfaceOrientationMask.Portrait
-//        } else if viewController is MyTabBarController {
-//            if let tabBarController = viewController as? MyTabBarController,
-//                navigationViewControllers = tabBarController.viewControllers as? [MyNavigationController] {
-//                return checkOrientation(navigationViewControllers[tabBarController.selectedIndex].visibleViewController)
-//            } else {
-//                return UIInterfaceOrientationMask.Portrait
-//            }
-//            
-//        } else {
-//            return checkOrientation(viewController!.presentedViewController)
-//        }
     }
 
 
