@@ -60,13 +60,13 @@
 		E26410A31D972C390020B0E6 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E2B3873A1D9F061300BCC1D7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitContainer.swift; sourceTree = "<group>"; };
-		E2B387401D9FB20500BCC1D7 /* DayChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayChart.swift; sourceTree = "<group>"; };
+		E2B387401D9FB20500BCC1D7 /* DayChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayChart.swift; path = Dashboard/DayChart.swift; sourceTree = "<group>"; };
 		E2E11B7A1DA370A3008FCE22 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		E2E11B801DA3814B008FCE22 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E2E11B821DA382D3008FCE22 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
-		E2E11B841DA4E27B008FCE22 /* WeekChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekChart.swift; sourceTree = "<group>"; };
-		E2E11B861DA4EA6A008FCE22 /* ChartType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartType.swift; sourceTree = "<group>"; };
-		E2E11B881DA4EB3D008FCE22 /* HabitChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitChart.swift; sourceTree = "<group>"; };
+		E2E11B841DA4E27B008FCE22 /* WeekChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekChart.swift; path = Dashboard/WeekChart.swift; sourceTree = "<group>"; };
+		E2E11B861DA4EA6A008FCE22 /* ChartType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartType.swift; path = Dashboard/ChartType.swift; sourceTree = "<group>"; };
+		E2E11B881DA4EB3D008FCE22 /* HabitChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HabitChart.swift; path = Dashboard/HabitChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +120,11 @@
 		E20A3AD51D7559610010E86B /* happyt */ = {
 			isa = PBXGroup;
 			children = (
+				E2E11B8B1DA4EE9C008FCE22 /* Helpers */,
+				E2E11B8A1DA4EE7E008FCE22 /* Views */,
 				E2E11B791DA3708A008FCE22 /* Extensions */,
 				E26410A21D972BF70020B0E6 /* Services */,
 				E20A3B011D90CD140010E86B /* DataModels */,
-				E20A3AFA1D8DD8BD0010E86B /* Login */,
-				E20A3AF91D8DD8730010E86B /* Dashboard */,
 				E20A3ADA1D7559610010E86B /* Main.storyboard */,
 				E20A3ADD1D7559610010E86B /* Assets.xcassets */,
 				E20A3ADF1D7559610010E86B /* LaunchScreen.storyboard */,
@@ -186,10 +186,6 @@
 			children = (
 				E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */,
 				E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */,
-				E2B387401D9FB20500BCC1D7 /* DayChart.swift */,
-				E2E11B841DA4E27B008FCE22 /* WeekChart.swift */,
-				E2E11B861DA4EA6A008FCE22 /* ChartType.swift */,
-				E2E11B881DA4EB3D008FCE22 /* HabitChart.swift */,
 			);
 			name = StatsView;
 			sourceTree = "<group>";
@@ -200,6 +196,34 @@
 				E2E11B7A1DA370A3008FCE22 /* Date.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E2E11B8A1DA4EE7E008FCE22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E20A3AFA1D8DD8BD0010E86B /* Login */,
+				E20A3AF91D8DD8730010E86B /* Dashboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E2E11B8B1DA4EE9C008FCE22 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E2E11B8C1DA4EEA6008FCE22 /* Chart */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E2E11B8C1DA4EEA6008FCE22 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				E2B387401D9FB20500BCC1D7 /* DayChart.swift */,
+				E2E11B841DA4E27B008FCE22 /* WeekChart.swift */,
+				E2E11B861DA4EA6A008FCE22 /* ChartType.swift */,
+				E2E11B881DA4EB3D008FCE22 /* HabitChart.swift */,
+			);
+			name = Chart;
 			sourceTree = "<group>";
 		};
 		E371D0AC9048DA08C3A0B9D6 /* Frameworks */ = {
