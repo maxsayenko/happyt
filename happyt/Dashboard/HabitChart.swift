@@ -13,7 +13,7 @@ struct HabitChart {
     let chart: Chart
     
     init(frame: CGRect, habit: Habit) {
-        let chartFrame = CGRectMake(10, 40, frame.width - 20, frame.height - 45)
+        let chartFrame = CGRectMake(10, 35, frame.width - 20, frame.height - 45)
         
         var coordinates: [(Int, Int)] = [(0, 0)]
         var yValue = 0
@@ -26,9 +26,9 @@ struct HabitChart {
         // TODO: Fix yesterday
         let yesterday = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -2, toDate: today, options: [])
         
-        debugPrint(today)
-        debugPrint("Yesterday")
-        debugPrint(yesterday!)
+//        debugPrint(today)
+//        debugPrint("Yesterday")
+//        debugPrint(yesterday!)
         
         // Last 24 hours of events
         let filteredEvents = habit.events.filter() { event in
@@ -52,8 +52,6 @@ struct HabitChart {
             coordinates.append((hour, yValue))
         }
 
-        //let chartPoints: [ChartPoint] = [(2, 2), (4, -4), (6, 6), (8, 10), (12, 9)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
-        
         let chartPoints: [ChartPoint] = coordinates.map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
         
         let xValues = [0, 3, 6, 9, 12, 15, 18, 21, 23].map {ChartAxisValueInt($0)}
