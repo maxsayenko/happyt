@@ -21,6 +21,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (3.5.1):
     - PromiseKit/CorePromise
+  - PureLayout (3.0.2)
   - SwiftCharts (0.4)
   - SwiftyJSON (2.3.2)
 
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - Alamofire (~> 3.2.1)
   - AlamofireImage (~> 2.0)
   - PromiseKit (~> 3.4)
+  - PureLayout
   - SwiftCharts (~> 0.4)
   - SwiftyJSON (~> 2.3.2)
 
@@ -36,9 +38,10 @@ SPEC CHECKSUMS:
   AlamofireImage: e52336282757bbe1644f075d6cb85f19c891f939
   OMGHTTPURLRQ: 1e54807cb7d5dbb506926e53498e1e9ac5720c79
   PromiseKit: 99ea973444a4bff6c38ffb97fa1bb175e619bcf0
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SwiftCharts: 84b43d9d70b791459ff5f50ae5a6704326de309d
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: f162e64a25c6694720b18e2f5c8ae4910130e156
+PODFILE CHECKSUM: a56898c5160ce3bdd4a99a61ea6a43c1c2d6c4c6
 
 COCOAPODS: 1.0.1
