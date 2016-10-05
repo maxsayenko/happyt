@@ -22,15 +22,13 @@ struct HabitChart {
         
         let today = NSDate()
         let unitFlags: NSCalendarUnit = [.Hour, .Day, .Month, .Year, .Minute]
-        //let todayComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: today)
-        let yesterday = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -1, toDate: today, options: [])
+        
+        // TODO: Fix yesterday
+        let yesterday = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -2, toDate: today, options: [])
         
         debugPrint(today)
         debugPrint("Yesterday")
-        debugPrint(yesterday)
-        
-        //let components = NSCalendar.currentCalendar().components(unitFlags, fromDate: today)
-        //debugPrint(components)
+        debugPrint(yesterday!)
         
         // Last 24 hours of events
         let filteredEvents = habit.events.filter() { event in
@@ -39,26 +37,20 @@ struct HabitChart {
         
         debugPrint("total events count = \(habit.events.count) and filtered = \(filteredEvents.count)")
         
-//        for event in habit.events {
-//            let dateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: event.date)
-//            let hour = dateComponents.hour
-////            let day = dateComponents.day
-////            
-////            debugPrint("==========")
-////            debugPrint(day)
-////            debugPrint(hour)
-//            
-//            let multiplier = event.isPositive ? 1 : -1
-//            yValue += 1 * multiplier
-//            
-//            if (yValue > maxY) {
-//                maxY = yValue
-//            } else if (yValue < minY) {
-//                minY = yValue
-//            }
-//            
-//            coordinates.append((hour, yValue))
-//        }
+        for event in filteredEvents as! [Event] {
+            let dateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: event.date)
+            let hour = dateComponents.hour
+            let multiplier = event.isPositive == 1 ? 1 : -1
+            yValue += 1 * multiplier
+            
+            if (yValue > maxY) {
+                maxY = yValue
+            } else if (yValue < minY) {
+                minY = yValue
+            }
+            
+            coordinates.append((hour, yValue))
+        }
 
         //let chartPoints: [ChartPoint] = [(2, 2), (4, -4), (6, 6), (8, 10), (12, 9)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
         
@@ -87,7 +79,7 @@ struct HabitChart {
         let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [lineModel])
         
         // create layer with base line
-        let baseLinePoints: [ChartPoint] = [(0, 0), (24, 0)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
+        let baseLinePoints: [ChartPoint] = [(0, 0), (23, 0)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
         let baseLineModel = ChartLineModel(chartPoints: baseLinePoints, lineColor: UIColor.blueColor(), lineWidth: 3, animDuration: 0, animDelay: 0)
         let baseLineChartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [baseLineModel])
         

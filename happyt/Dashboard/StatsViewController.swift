@@ -68,8 +68,6 @@ class StatsViewController: UIViewController {
             
             offsetY = 10 + container.view.frame.maxY
             contentHeight = container.view.frame.maxY - 50
-            debugPrint("************")
-            debugPrint(contentHeight)
         }
         
         // Setting content Height for scroll view
