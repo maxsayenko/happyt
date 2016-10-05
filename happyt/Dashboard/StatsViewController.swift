@@ -9,6 +9,7 @@
 import UIKit
 import SwiftCharts
 import CoreData
+import PureLayout
 
 class StatsViewController: UIViewController {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -21,6 +22,8 @@ class StatsViewController: UIViewController {
     func saveContext() {
         CoreDataStackManager.sharedInstance().saveContext()
     }
+    
+    var heightConstraint:  NSLayoutConstraint!
     
     var habits: [Habit] = []
     var charts: [Chart] = []
@@ -53,6 +56,9 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        heightConstraint = NSLayoutConstraint(item: contentView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 0)
+        contentView.addConstraint(heightConstraint)
     }
     
     func getGraphs() {
@@ -67,12 +73,9 @@ class StatsViewController: UIViewController {
             charts.append(container.chart)
             
             offsetY = 10 + container.view.frame.maxY
-            contentHeight = container.view.frame.maxY - 50
+            contentHeight = container.view.frame.maxY
         }
         
-        // Setting content Height for scroll view
-        let heightConstraint = NSLayoutConstraint(item: contentView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: contentHeight)
-        NSLayoutConstraint.activateConstraints([heightConstraint])
+        heightConstraint.constant = contentHeight
     }
-
 }
