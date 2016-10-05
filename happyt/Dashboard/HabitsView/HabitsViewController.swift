@@ -70,17 +70,18 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func plusButtonClicked(sender:UIButton) {
-        let buttonRow = sender.tag
-        //let habit = appDelegate.habits[buttonRow]
-        //let event = Event(habitId: habit.id, isPositive: true)
-        //appDelegate.habits[buttonRow].events.append(event)
+        saveEvent(true, row: sender.tag)
     }
     
     func minusButtonClicked(sender:UIButton) {
-        let buttonRow = sender.tag
-        //let habit = appDelegate.habits[buttonRow]
-        //let event = Event(habitId: habit.id, isPositive: false)
-        //appDelegate.habits[buttonRow].events.append(event)
+        saveEvent(false, row: sender.tag)
+    }
+    
+    func saveEvent(isPositive: Bool, row: Int) {
+        let habit = habits[row]
+        let event = Event(isPositive: isPositive, context: sharedContext)
+        event.habit = habit
+        saveContext()
     }
 
     override func didReceiveMemoryWarning() {
