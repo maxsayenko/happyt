@@ -53,11 +53,9 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getGraphs()
     }
     
     func getGraphs() {
-        let habits = appDelegate.habits
         var offsetY: CGFloat = 10
         var contentHeight: CGFloat = 0
         let containerWidth = view.frame.width - 22
@@ -70,6 +68,8 @@ class StatsViewController: UIViewController {
             
             offsetY = 10 + container.view.frame.maxY
             contentHeight = container.view.frame.maxY - 50
+            debugPrint("************")
+            debugPrint(contentHeight)
         }
         
         // Setting content Height for scroll view
