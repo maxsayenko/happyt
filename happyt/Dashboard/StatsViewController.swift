@@ -9,7 +9,6 @@
 import UIKit
 import SwiftCharts
 import CoreData
-import PureLayout
 
 class StatsViewController: UIViewController {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
