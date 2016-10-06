@@ -217,7 +217,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Habits" id="mfl-EG-DTU"/>
+                    <tabBarItem key="tabBarItem" title="" image="HabitIcon" id="mfl-EG-DTU">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="table" destination="H2d-hH-uOX" id="bLa-pw-Crp"/>
                         <outlet property="userNameLabel" destination="cg4-Wh-OmZ" id="UkI-m8-5Aw"/>
@@ -543,7 +545,10 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stats" id="yZ9-9v-jwQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="StatsIcon" selectedImage="StatsIcon" id="yZ9-9v-jwQ">
+                        <inset key="imageInsets" minX="1" minY="8" maxX="1" maxY="-8"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="contentView" destination="LB8-Oh-882" id="sj0-On-6BE"/>
                         <outlet property="scrollView" destination="YyF-jB-Oo3" id="TVk-Q4-gIw"/>
@@ -615,6 +620,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="HabitIcon" width="32" height="32"/>
+        <image name="StatsIcon" width="64" height="64"/>
         <image name="minusButton" width="50" height="52"/>
         <image name="minusButtonPressed" width="50" height="50"/>
         <image name="plusButton" width="42" height="44"/>
