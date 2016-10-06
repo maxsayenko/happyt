@@ -54,7 +54,12 @@ class WeekChart: HabitChart {
         
         func updateChartPoints(dayName: String, event: Event) {
             daysWithEvents[dayName]!.events.append(event)
-            daysWithEvents[dayName]!.value = daysWithEvents[dayName]!.events.count
+            if(event.isPositive == 1) {
+                daysWithEvents[dayName]!.value += 1
+            } else {
+                daysWithEvents[dayName]!.value -= 1
+            }
+            //daysWithEvents[dayName]!.value = daysWithEvents[dayName]!.events.count
             updateMinMax(daysWithEvents[dayName]!.value)
         }
         
@@ -129,13 +134,19 @@ class WeekChart: HabitChart {
         let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.blackColor(), linesWidth: 1.0)
         let guidelinesLayer = ChartGuideLinesDottedLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, settings: settings)
         
+        // create layer with base line
+        let baseLinePoints: [ChartPoint] = [(0, 0), (6, 0)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
+        let baseLineModel = ChartLineModel(chartPoints: baseLinePoints, lineColor: UIColor.blueColor(), lineWidth: 3, animDuration: 0, animDelay: 0)
+        let baseLineChartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [baseLineModel])
+        
         let chart = Chart(
             frame: chartFrame,
             layers: [
                 xAxis,
                 yAxis,
                 guidelinesLayer,
-                chartPointsLayer]
+                chartPointsLayer,
+                baseLineChartPointsLineLayer]
         )
 
         super.init(view: chart.view, chart: chart)
