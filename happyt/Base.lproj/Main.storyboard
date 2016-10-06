@@ -60,7 +60,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="3Ir-ZD-Alr"/>
                                 </constraints>
-                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textAttributes>
@@ -81,12 +81,13 @@
                                     <constraint firstAttribute="height" constant="33" id="nUR-uf-80L"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H2d-hH-uOX">
                                 <rect key="frame" x="0.0" y="229" width="600" height="322"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="habitCell" id="Awf-zK-Pmv" customClass="HabitTableViewCell" customModule="happyt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="80"/>
@@ -120,7 +121,7 @@
                                                     <state key="highlighted" image="minusButtonPressed"/>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.27450980392156865" green="0.85098039215686272" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="sgw-ES-uPN" firstAttribute="baseline" secondItem="eGr-Eo-ahY" secondAttribute="baseline" id="8Kr-zW-Qw6"/>
                                                 <constraint firstItem="sgw-ES-uPN" firstAttribute="firstBaseline" secondItem="eGr-Eo-ahY" secondAttribute="baseline" id="FOR-VP-OOy"/>
@@ -181,11 +182,11 @@
                                     <constraint firstAttribute="width" constant="190" id="LIO-VX-xku"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="top" secondItem="ql2-0d-WCh" secondAttribute="top" id="9ZR-ez-yRG"/>
                             <constraint firstItem="Iyg-Wn-vb9" firstAttribute="leading" secondItem="zdk-fI-Xf5" secondAttribute="leading" constant="20" id="Ahe-DD-b1l"/>
@@ -430,7 +431,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="uJ4-wE-pX8"/>
                                 </constraints>
-                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textAttributes>
