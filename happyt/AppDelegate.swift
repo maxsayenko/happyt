@@ -11,13 +11,9 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-    var habits: [Habit] = []
     var userInfo: UserInfo?
     
-    // TODO: Remove it
     // Core Data - Convenience methods
     lazy var sharedContext: NSManagedObjectContext =  {
         return CoreDataStackManager.sharedInstance().managedObjectContext
@@ -53,10 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             events1.append(event)
         }
         habit1.events = NSOrderedSet(array: events1)
-        habits.append(habit1)
         
-        habits.append(Habit(name: "new one", hasPlusButton: true, hasMinusButton: false, context: context))
-        habits.append(Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false, context: context))
+        _ = Habit(name: "new one", hasPlusButton: true, hasMinusButton: false, context: context)
+        _ = Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false, context: context)
         saveContext()
         
         // Override point for customization after application launch.

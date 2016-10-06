@@ -11,8 +11,6 @@ import SwiftCharts
 import CoreData
 
 class StatsViewController: UIViewController {
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
     // Core Data - Convenience methods
     lazy var sharedContext: NSManagedObjectContext =  {
         return CoreDataStackManager.sharedInstance().managedObjectContext

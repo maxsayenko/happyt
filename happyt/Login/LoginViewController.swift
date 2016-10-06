@@ -65,7 +65,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            debugPrint("got FBSDKGraphRequest DONE")
             if ((error) != nil) {
                 // Process error
                 SCLAlertView().showError("Data Error", subTitle: "Failed to get user information.")

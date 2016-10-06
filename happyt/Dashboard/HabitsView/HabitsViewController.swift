@@ -56,7 +56,6 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         userProfImageView.layer.borderWidth = 0.5
         userProfImageView.clipsToBounds = true
         
-        debugPrint(appDelegate.userInfo)
         userNameLabel.text = appDelegate.userInfo?.name
         
         if let userInfo: UserInfo = appDelegate.userInfo {
