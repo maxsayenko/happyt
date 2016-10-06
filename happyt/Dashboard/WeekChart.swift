@@ -10,6 +10,21 @@ import SwiftCharts
 
 class WeekChart: HabitChart {
     init(frame: CGRect, habit: Habit) {
+        // Settings
+        let chartFrame = CGRectMake(10, 35, frame.width - 20, frame.height - 45)
+        
+        let chartSettings = ChartSettings()
+        chartSettings.axisStrokeWidth = 0.2
+        chartSettings.labelsToAxisSpacingX = 3
+        chartSettings.top = 5
+        chartSettings.trailing = 15
+        chartSettings.labelsToAxisSpacingY = 10
+
+        let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
+        
+        // To maintain solid order
+        let xAxisData = [("Sun", 0), ("Mon", 1), ("Tue", 2), ("Wed", 3), ("Thurs", 4), ("Fri", 5), ("Sat", 6)]
+        
         var minY = 0
         var maxY = 1
         
@@ -29,11 +44,11 @@ class WeekChart: HabitChart {
         // Go back in time, 1 less day, and then go to the beginning of that day
         let weekStart = today.addDays((dateComponents.weekday - 1) * -1).startOfDay
         
-        debugPrint(dateComponents.weekday)
-        debugPrint(today)
-        debugPrint(today.getString())
-        debugPrint(weekStart)
-        debugPrint(weekStart.getString())
+//        debugPrint(dateComponents.weekday)
+//        debugPrint(today)
+//        debugPrint(today.getString())
+//        debugPrint(weekStart)
+//        debugPrint(weekStart.getString())
         
         var daysWithEvents: [String: WeekChartPoint] = ["Sun": WeekChartPoint(type: WeekDayType.Sun), "Mon": WeekChartPoint(type: WeekDayType.Mon), "Tue": WeekChartPoint(type: WeekDayType.Tue), "Wed": WeekChartPoint(type: WeekDayType.Wed), "Thu": WeekChartPoint(type: WeekDayType.Thu), "Fri": WeekChartPoint(type: WeekDayType.Fri), "Sat": WeekChartPoint(type: WeekDayType.Sat)]
         
@@ -80,25 +95,12 @@ class WeekChart: HabitChart {
             }
         }
         
-        let chartData = [("Sun", 0, 4), ("Mon", 1, 3), ("Tue", 2, 5), ("Wed", 3, 7), ("Thurs", 4, 17), ("Fri", 5, 11), ("Sat", 6, 10)]
-        
-        let chartPoints = daysWithEvents.map{
-            ChartPoint(x: ChartAxisValueString($0.0, order: $0.1.type.rawValue), y: ChartAxisValueInt($0.1.value))
-        }
-        
-//        let chartPoints = chartData.map{
-//            ChartPoint(x: ChartAxisValueString($0.0, order: $0.1), y: ChartAxisValueInt($0.2))
-//        }
-        
-        let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
-        
-        let (axisValues1, axisValues2) = (
-            (minY).stride(through: maxY, by: 1).map {ChartAxisValueDouble(Double($0), labelSettings: labelSettings)},
-            chartData.map() { name, x, y in
+        let (xValues, yValues) = (
+            xAxisData.map() { name, x in
                 ChartAxisValueString(name, order: x, labelSettings: labelSettings)
-            }
+            },
+            (minY).stride(through: maxY, by: 1).map {ChartAxisValueDouble(Double($0), labelSettings: labelSettings)}
         )
-        let (xValues, yValues) = (axisValues2, axisValues1)
         
         let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Days", settings: labelSettings))
         let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "Count", settings: labelSettings.defaultVertical()))
@@ -114,18 +116,14 @@ class WeekChart: HabitChart {
             return ChartPointViewBar(p1: p1, p2: p2, width: barWidth, bgColor: UIColor.blueColor())
         }
         
-        let chartFrame = CGRectMake(10, 35, frame.width - 20, frame.height - 45)
-        
-        let chartSettings = ChartSettings()
-        chartSettings.axisStrokeWidth = 0.2
-        chartSettings.labelsToAxisSpacingX = 3
-        chartSettings.top = 5
-        chartSettings.trailing = 15
-        chartSettings.labelsToAxisSpacingY = 10
-        
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
         let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
         
+        
+        // Bar Data Layer
+        let chartPoints = daysWithEvents.map{
+            ChartPoint(x: ChartAxisValueString($0.0, order: $0.1.type.rawValue), y: ChartAxisValueInt($0.1.value))
+        }
         let chartPointsLayer = ChartPointsViewsLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, chartPoints: chartPoints, viewGenerator: barViewGenerator)
         
         let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.blackColor(), linesWidth: 1.0)
