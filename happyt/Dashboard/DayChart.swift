@@ -18,7 +18,11 @@ class DayChart: HabitChart {
         chartSettings.top = 10
         chartSettings.trailing = 10
         
-        let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
+        let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14), fontColor: UIColor.whiteColor(), rotation: 0, rotationKeep: .Center, shiftXOnRotation: true, textAlignment: .Default)
+        
+        let guidelinesColor = UIColor.whiteColor()
+        let lineColor = UIColor(red: 0, green: 161, blue: 216, alpha: 1)
+        let baselineColor = UIColor.yellowColor()
         
         var coordinates: [(Int, Int)] = [(0, 0)]
         var yValue = 0
@@ -50,8 +54,8 @@ class DayChart: HabitChart {
 
         let chartPoints: [ChartPoint] = coordinates.map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
         
-        let xValues = [0, 3, 6, 9, 12, 15, 18, 21, 23].map {ChartAxisValueInt($0)}
-        let yValues = (minY).stride(through: maxY, by: 1).map {ChartAxisValueInt($0)}
+        let xValues = [0, 3, 6, 9, 12, 15, 18, 21, 23].map {ChartAxisValueInt($0, labelSettings: labelSettings)}
+        let yValues = (minY).stride(through: maxY, by: 1).map {ChartAxisValueInt($0, labelSettings: labelSettings)}
         
         // create axis models with axis values and axis title
         let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Time", settings: labelSettings))
@@ -61,16 +65,16 @@ class DayChart: HabitChart {
         let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
         
         // create layer with line
-        let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: UIColor(red: 0.4, green: 0.4, blue: 1, alpha: 0.2), lineWidth: 3, animDuration: 0.7, animDelay: 0)
+        let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: lineColor, lineWidth: 3, animDuration: 0.7, animDelay: 0)
         let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [lineModel])
         
         // create layer with base line
         let baseLinePoints: [ChartPoint] = [(0, 0), (23, 0)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
-        let baseLineModel = ChartLineModel(chartPoints: baseLinePoints, lineColor: UIColor.blueColor(), lineWidth: 3, animDuration: 0, animDelay: 0)
+        let baseLineModel = ChartLineModel(chartPoints: baseLinePoints, lineColor: baselineColor, lineWidth: 3, animDuration: 0, animDelay: 0)
         let baseLineChartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [baseLineModel])
         
         // create layer with guidelines
-        let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.blackColor(), linesWidth: 1.0)
+        let settings = ChartGuideLinesDottedLayerSettings(linesColor: guidelinesColor, linesWidth: 1.0)
         let guidelinesLayer = ChartGuideLinesDottedLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, settings: settings)
         
         let chart = Chart(

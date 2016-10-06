@@ -8,7 +8,8 @@
 import SwiftCharts
 
 struct HabitContainer {
-    private let labelOffset: CGFloat = 10
+    private let labelOffsetX: CGFloat = 40
+    private let labelOffsetY: CGFloat = 10
     private let labelHeight: CGFloat = 20
     
     var view: UIView
@@ -17,13 +18,14 @@ struct HabitContainer {
     init(frame: CGRect, habit: Habit, type: ChartType) {
         let habitContainerView = UIView(frame: frame)
         habitContainerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        habitContainerView.backgroundColor = UIColor.greenColor()
+        //habitContainerView.alpha = 0.6
+        habitContainerView.backgroundColor = UIColor.grayColor()
         habitContainerView.layer.cornerRadius = 20
-        habitContainerView.layer.borderWidth = 1
+        //habitContainerView.layer.borderWidth = 1
         
         // Label
-        let nameLabel = UILabel(frame: CGRectMake(labelOffset, labelOffset, frame.width, labelHeight))
+        let nameLabel = UILabel(frame: CGRectMake(labelOffsetX, labelOffsetY, frame.width, labelHeight))
+        nameLabel.textColor = UIColor.whiteColor()
         nameLabel.text = habit.name
         habitContainerView.addSubview(nameLabel)
         

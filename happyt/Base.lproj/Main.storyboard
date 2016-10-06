@@ -424,6 +424,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="uJ4-wE-pX8"/>
                                 </constraints>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Stats" id="SXD-r7-NTv"/>
                                 </items>
@@ -433,7 +437,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LB8-Oh-882" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="600" id="QCW-yR-uD4"/>
                                         </constraints>
@@ -503,7 +507,7 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LB8-Oh-882" firstAttribute="height" secondItem="nyK-F1-vzo" secondAttribute="height" id="0WL-NE-oG6"/>
                             <constraint firstItem="YyF-jB-Oo3" firstAttribute="top" secondItem="q16-cI-s7A" secondAttribute="bottom" id="2BU-28-Wht"/>
@@ -557,6 +561,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cdh-9u-pce">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -573,9 +581,10 @@
                 <tabBarController title="tabBarController" automaticallyAdjustsScrollViewInsets="NO" id="JBP-Ri-sUt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="pjl-k1-Tsn">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="pjl-k1-Tsn">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="2V1-MR-Uo1" kind="relationship" relationship="viewControllers" id="caK-Bi-c8X"/>
