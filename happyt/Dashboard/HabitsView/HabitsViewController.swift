@@ -11,6 +11,7 @@ import CoreData
 import SCLAlertView
 
 class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var defaultColor: CGColor? = nil
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     // Core Data - Convenience methods
@@ -48,10 +49,9 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         self.navigationController?.navigationBarHidden = true
+        defaultColor = self.view.backgroundColor?.CGColor
 
-        // TODO: Move to some view init function
         userProfImageView.layer.cornerRadius = 40
-//        userProfImageView.backgroundColor = UIColor.greenColor()
         userProfImageView.layer.borderColor = UIColor.grayColor().CGColor
         userProfImageView.layer.borderWidth = 0.5
         userProfImageView.clipsToBounds = true
@@ -83,13 +83,17 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let event = Event(isPositive: isPositive, context: sharedContext)
         event.habit = habit
         saveContext()
+        
+        let color = isPositive ? UIColor.greenColor().CGColor : UIColor.redColor().CGColor
+        UIView.animateWithDuration(0, animations: {() -> Void in
+            self.view.layer.backgroundColor = color
+            }, completion: { isCompleted -> Void in
+                UIView.animateWithDuration(1, animations: {() -> Void in
+                    self.view.layer.backgroundColor = self.defaultColor
+                })
+        })
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return habits.count
     }
@@ -108,12 +112,6 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.minusButton.addTarget(self, action: #selector(HabitsViewController.minusButtonClicked(_:)), forControlEvents: .TouchUpInside)
         
         return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedHabit = habits[indexPath.row]
-        debugPrint("cell touched at index: \(indexPath.row) with name: \(selectedHabit.name)")
-        debugPrint(habits[indexPath.row])
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
