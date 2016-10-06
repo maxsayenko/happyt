@@ -20,19 +20,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvY-0E-FQG">
-                                <rect key="frame" x="279" y="150" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="happyt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvY-0E-FQG">
+                                <rect key="frame" x="133" y="94" width="335" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="6Dm-U3-7ZZ"/>
+                                    <constraint firstAttribute="height" constant="120" id="tVn-6s-01h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="100"/>
+                                <color key="textColor" red="0.0" green="0.63137254901960782" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xvY-0E-FQG" secondAttribute="bottom" constant="429" id="BV2-FE-gzV"/>
+                            <constraint firstItem="xvY-0E-FQG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C2h-fv-wu7"/>
+                            <constraint firstItem="xvY-0E-FQG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="DjE-p6-xgy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xvY-0E-FQG" secondAttribute="trailing" constant="30" id="Pot-Fq-lQ6"/>
                             <constraint firstItem="xvY-0E-FQG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ao6-Z4-mHg"/>
+                            <constraint firstItem="xvY-0E-FQG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="jpF-g8-8Rj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xvY-0E-FQG" secondAttribute="bottom" constant="429" id="nhl-Df-1FT"/>
-                            <constraint firstItem="xvY-0E-FQG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="86" id="vSZ-MK-pQr"/>
+                            <constraint firstItem="xvY-0E-FQG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="vSZ-MK-pQr"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DjE-p6-xgy"/>
+                                <exclude reference="Pot-Fq-lQ6"/>
+                                <exclude reference="ao6-Z4-mHg"/>
+                                <exclude reference="jpF-g8-8Rj"/>
+                                <exclude reference="BV2-FE-gzV"/>
+                                <exclude reference="nhl-Df-1FT"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="IZ5-mA-yN8"/>
                     <connections>
@@ -571,7 +590,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cdh-9u-pce">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textAttributes>
