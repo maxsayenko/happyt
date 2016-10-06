@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // This is purely to generate some data for the app. To display in graphs. Comment scratchpadContext out and uncomment sharedContext to use.  
         let context = CoreDataStackManager.sharedInstance().scratchpadContext
         //let context = sharedContext
         
