@@ -7,16 +7,60 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
+    var userInfo: UserInfo?
+    
+    // Core Data - Convenience methods
+    lazy var sharedContext: NSManagedObjectContext =  {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }()
+    
+    func saveContext() {
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // This is purely to generate some data for the app. To display in graphs. Comment scratchpadContext out and uncomment sharedContext to use.  
+        let context = CoreDataStackManager.sharedInstance().scratchpadContext
+        //let context = sharedContext
+        
+        let habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true, context: context)
+        var events1: [Event] = []
+        for hour in [3, 7, 10, 17, 19, 23] {
+            let c = NSDateComponents()
+            c.year = 2016
+            c.month = 10
+            c.day = 3
+            c.hour = hour
+            c.minute = 15
+            c.second = 37
+            let date = NSCalendar.currentCalendar().dateFromComponents(c)
+            
+            var positive = true
+            if (hour == 3 || hour == 11 || hour == 19) {
+                positive = false
+            }
+            
+            let event = Event(date: date!, isPositive: positive, context: context)
+            events1.append(event)
+        }
+        habit1.events = NSOrderedSet(array: events1)
+        
+        _ = Habit(name: "new one", hasPlusButton: true, hasMinusButton: false, context: context)
+        _ = Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false, context: context)
+        saveContext()
+        
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+    
+    func application (application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        return checkOrientation(self.window?.rootViewController)
     }
     
     // The “OpenURL” method allows your app to open again after the user has validated their login credentials.
@@ -54,6 +98,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    
+    
+    func checkOrientation(viewController: UIViewController?) -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
     }
 
 

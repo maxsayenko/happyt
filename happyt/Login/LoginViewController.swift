@@ -7,17 +7,16 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
-            debugPrint("Logged In")
             returnUserData()
         }
         else
@@ -37,20 +36,20 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     
     // Facebook Delegate Methods
-    
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        print("User Logged In")
+        debugPrint("User Logged In")
         
         if ((error) != nil)
         {
-            // Process error
+            SCLAlertView().showError("Login Error", subTitle: "Failed FaceBook login.")
         }
         else if result.isCancelled {
             // Handle cancellations
+            SCLAlertView().showError("Access Error", subTitle: "Login was canceled.")
         }
         else {
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
+            // TODO: Simplify login flow
+            returnUserData()
             if result.grantedPermissions.contains("email")
             {
                 // Do work
@@ -59,33 +58,34 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("User Logged Out")
+        // logout
     }
     
     func returnUserData()
     {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
+            if ((error) != nil) {
                 // Process error
-                print("Error: \(error)")
+                SCLAlertView().showError("Data Error", subTitle: "Failed to get user information.")
             }
-            else
-            {
-                print("fetched user: \(result)")
+            else {
+                var userInfo = UserInfo()
                 if let userName = result.valueForKey("name") as? String {
-                    print("User Name is: \(userName)")
+                    userInfo.name = userName
                 }
 
                 if let userEmail = result.valueForKey("email") as? String {
-                    print("User Email is: \(userEmail)")
+                    userInfo.email = userEmail
                 }
+                
+                if let userId = result.valueForKey("id") as? String {
+                    userInfo.id = userId
+                }
+                
+                self.appDelegate.userInfo = userInfo
+                self.performSegueWithIdentifier("toDashboardSegue", sender: self)
             }
         })
     }
-
-
 }
-

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC88196790262430C9B2068A /* Pods_happyt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCBBB4C5F042FC65A5B5714 /* Pods_happyt.framework */; };
 		E20A3AD71D7559610010E86B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AD61D7559610010E86B /* AppDelegate.swift */; };
 		E20A3AD91D7559610010E86B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AD81D7559610010E86B /* LoginViewController.swift */; };
 		E20A3ADC1D7559610010E86B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20A3ADA1D7559610010E86B /* Main.storyboard */; };
@@ -16,12 +17,34 @@
 		E20A3AF11D755B1F0010E86B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A3AF01D755B1F0010E86B /* FBSDKShareKit.framework */; };
 		E20A3AF31D755B340010E86B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A3AF21D755B340010E86B /* FBSDKLoginKit.framework */; };
 		E20A3AF61D755F650010E86B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A3AF51D755F650010E86B /* Bolts.framework */; };
+		E20A3AF81D772A390010E86B /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AF71D772A390010E86B /* HabitsViewController.swift */; };
+		E20A3AFC1D8DD9520010E86B /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */; };
+		E20A3B001D8DF71E0010E86B /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3AFF1D8DF71E0010E86B /* AddHabitViewController.swift */; };
+		E20A3B031D90CD3F0010E86B /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3B021D90CD3F0010E86B /* Habit.swift */; };
+		E248B4E81D93B0880039CCB4 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248B4E71D93B0880039CCB4 /* HabitTableViewCell.swift */; };
+		E264109F1D96EF8C0020B0E6 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264109E1D96EF8C0020B0E6 /* UserInfo.swift */; };
+		E26410A41D972C390020B0E6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26410A31D972C390020B0E6 /* Service.swift */; };
+		E2AAA2E81DA6AA1D0027C342 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E2AAA2E71DA6AA1D0027C342 /* README.md */; };
+		E2B3873B1D9F061300BCC1D7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3873A1D9F061300BCC1D7 /* Event.swift */; };
+		E2B3873F1D9F996200BCC1D7 /* HabitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */; };
+		E2B387411D9FB20500BCC1D7 /* DayChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B387401D9FB20500BCC1D7 /* DayChart.swift */; };
+		E2E11B7B1DA370A3008FCE22 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B7A1DA370A3008FCE22 /* Date.swift */; };
+		E2E11B811DA3814B008FCE22 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B7F1DA3814B008FCE22 /* Model.xcdatamodeld */; };
+		E2E11B831DA382D3008FCE22 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B821DA382D3008FCE22 /* CoreDataStackManager.swift */; };
+		E2E11B851DA4E27B008FCE22 /* WeekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B841DA4E27B008FCE22 /* WeekChart.swift */; };
+		E2E11B871DA4EA6A008FCE22 /* ChartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B861DA4EA6A008FCE22 /* ChartType.swift */; };
+		E2E11B891DA4EB3D008FCE22 /* HabitChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B881DA4EB3D008FCE22 /* HabitChart.swift */; };
+		E2E11B8E1DA624C0008FCE22 /* WeekChartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B8D1DA624C0008FCE22 /* WeekChartPoint.swift */; };
+		E2E11B901DA626E4008FCE22 /* WeekDayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11B8F1DA626E4008FCE22 /* WeekDayType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1466912760F50993C8906CFA /* Pods-happyt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happyt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-happyt/Pods-happyt.debug.xcconfig"; sourceTree = "<group>"; };
+		4CCBBB4C5F042FC65A5B5714 /* Pods_happyt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_happyt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC79C56A268F0AC5EE344B18 /* Pods-happyt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happyt.release.xcconfig"; path = "Pods/Target Support Files/Pods-happyt/Pods-happyt.release.xcconfig"; sourceTree = "<group>"; };
 		E20A3AD31D7559610010E86B /* happyt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = happyt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20A3AD61D7559610010E86B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E20A3AD81D7559610010E86B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E20A3AD81D7559610010E86B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
 		E20A3ADB1D7559610010E86B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E20A3ADD1D7559610010E86B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E20A3AE01D7559610010E86B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,6 +54,25 @@
 		E20A3AF21D755B340010E86B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "happyt/FacebookSDKs-iOS-4.15.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		E20A3AF41D755CE60010E86B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E20A3AF51D755F650010E86B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "happyt/FacebookSDKs-iOS-4.15.0/Bolts.framework"; sourceTree = "<group>"; };
+		E20A3AF71D772A390010E86B /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HabitsViewController.swift; path = happyt/Dashboard/HabitsView/HabitsViewController.swift; sourceTree = SOURCE_ROOT; };
+		E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		E20A3AFF1D8DF71E0010E86B /* AddHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
+		E20A3B021D90CD3F0010E86B /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		E248B4E71D93B0880039CCB4 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
+		E264109E1D96EF8C0020B0E6 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		E26410A31D972C390020B0E6 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E2AAA2E71DA6AA1D0027C342 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E2B3873A1D9F061300BCC1D7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitContainer.swift; sourceTree = "<group>"; };
+		E2B387401D9FB20500BCC1D7 /* DayChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayChart.swift; path = Dashboard/DayChart.swift; sourceTree = "<group>"; };
+		E2E11B7A1DA370A3008FCE22 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		E2E11B801DA3814B008FCE22 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E2E11B821DA382D3008FCE22 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		E2E11B841DA4E27B008FCE22 /* WeekChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekChart.swift; path = Dashboard/WeekChart.swift; sourceTree = "<group>"; };
+		E2E11B861DA4EA6A008FCE22 /* ChartType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartType.swift; path = Dashboard/ChartType.swift; sourceTree = "<group>"; };
+		E2E11B881DA4EB3D008FCE22 /* HabitChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HabitChart.swift; path = Dashboard/HabitChart.swift; sourceTree = "<group>"; };
+		E2E11B8D1DA624C0008FCE22 /* WeekChartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekChartPoint.swift; sourceTree = "<group>"; };
+		E2E11B8F1DA626E4008FCE22 /* WeekDayType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,12 +84,22 @@
 				E20A3AF31D755B340010E86B /* FBSDKLoginKit.framework in Frameworks */,
 				E20A3AF11D755B1F0010E86B /* FBSDKShareKit.framework in Frameworks */,
 				E20A3AEF1D755B0C0010E86B /* FBSDKCoreKit.framework in Frameworks */,
+				DC88196790262430C9B2068A /* Pods_happyt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A0DEAB851298E97D075D5DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1466912760F50993C8906CFA /* Pods-happyt.debug.xcconfig */,
+				BC79C56A268F0AC5EE344B18 /* Pods-happyt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E20A3ACA1D7559610010E86B = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +110,8 @@
 				E20A3AEE1D755B0C0010E86B /* FBSDKCoreKit.framework */,
 				E20A3AD51D7559610010E86B /* happyt */,
 				E20A3AD41D7559610010E86B /* Products */,
+				5A0DEAB851298E97D075D5DC /* Pods */,
+				E371D0AC9048DA08C3A0B9D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,14 +126,122 @@
 		E20A3AD51D7559610010E86B /* happyt */ = {
 			isa = PBXGroup;
 			children = (
-				E20A3AD61D7559610010E86B /* AppDelegate.swift */,
-				E20A3AD81D7559610010E86B /* LoginViewController.swift */,
+				E2E11B8B1DA4EE9C008FCE22 /* Helpers */,
+				E2E11B8A1DA4EE7E008FCE22 /* Views */,
+				E2E11B791DA3708A008FCE22 /* Extensions */,
+				E26410A21D972BF70020B0E6 /* Network */,
+				E20A3B011D90CD140010E86B /* DataModels */,
 				E20A3ADA1D7559610010E86B /* Main.storyboard */,
 				E20A3ADD1D7559610010E86B /* Assets.xcassets */,
 				E20A3ADF1D7559610010E86B /* LaunchScreen.storyboard */,
 				E20A3AE21D7559620010E86B /* Info.plist */,
+				E20A3AD61D7559610010E86B /* AppDelegate.swift */,
+				E2E11B7F1DA3814B008FCE22 /* Model.xcdatamodeld */,
+				E2E11B821DA382D3008FCE22 /* CoreDataStackManager.swift */,
+				E2AAA2E71DA6AA1D0027C342 /* README.md */,
 			);
 			path = happyt;
+			sourceTree = "<group>";
+		};
+		E20A3AF91D8DD8730010E86B /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3873D1D9F994D00BCC1D7 /* StatsView */,
+				E248B4E91D93B22B0039CCB4 /* HabitsView */,
+				E20A3AFF1D8DF71E0010E86B /* AddHabitViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		E20A3AFA1D8DD8BD0010E86B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E20A3AD81D7559610010E86B /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		E20A3B011D90CD140010E86B /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				E20A3B021D90CD3F0010E86B /* Habit.swift */,
+				E264109E1D96EF8C0020B0E6 /* UserInfo.swift */,
+				E2B3873A1D9F061300BCC1D7 /* Event.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		E248B4E91D93B22B0039CCB4 /* HabitsView */ = {
+			isa = PBXGroup;
+			children = (
+				E20A3AF71D772A390010E86B /* HabitsViewController.swift */,
+				E248B4E71D93B0880039CCB4 /* HabitTableViewCell.swift */,
+			);
+			path = HabitsView;
+			sourceTree = "<group>";
+		};
+		E26410A21D972BF70020B0E6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E26410A31D972C390020B0E6 /* Service.swift */,
+			);
+			name = Network;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E2B3873D1D9F994D00BCC1D7 /* StatsView */ = {
+			isa = PBXGroup;
+			children = (
+				E20A3AFB1D8DD9520010E86B /* StatsViewController.swift */,
+				E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */,
+			);
+			name = StatsView;
+			sourceTree = "<group>";
+		};
+		E2E11B791DA3708A008FCE22 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2E11B7A1DA370A3008FCE22 /* Date.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E2E11B8A1DA4EE7E008FCE22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E20A3AFA1D8DD8BD0010E86B /* Login */,
+				E20A3AF91D8DD8730010E86B /* Dashboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E2E11B8B1DA4EE9C008FCE22 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E2E11B8C1DA4EEA6008FCE22 /* Chart */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E2E11B8C1DA4EEA6008FCE22 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				E2B387401D9FB20500BCC1D7 /* DayChart.swift */,
+				E2E11B841DA4E27B008FCE22 /* WeekChart.swift */,
+				E2E11B8D1DA624C0008FCE22 /* WeekChartPoint.swift */,
+				E2E11B861DA4EA6A008FCE22 /* ChartType.swift */,
+				E2E11B8F1DA626E4008FCE22 /* WeekDayType.swift */,
+				E2E11B881DA4EB3D008FCE22 /* HabitChart.swift */,
+			);
+			name = Chart;
+			sourceTree = "<group>";
+		};
+		E371D0AC9048DA08C3A0B9D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CCBBB4C5F042FC65A5B5714 /* Pods_happyt.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,9 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E20A3AE51D7559620010E86B /* Build configuration list for PBXNativeTarget "happyt" */;
 			buildPhases = (
+				0A232FB884B37E1A492DE6BB /* [CP] Check Pods Manifest.lock */,
 				E20A3ACF1D7559610010E86B /* Sources */,
 				E20A3AD01D7559610010E86B /* Frameworks */,
 				E20A3AD11D7559610010E86B /* Resources */,
+				03814D6806568F954F4B658B /* [CP] Embed Pods Frameworks */,
+				9939DB90E8B9003C36F41BB8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,19 +307,86 @@
 			files = (
 				E20A3AE11D7559610010E86B /* LaunchScreen.storyboard in Resources */,
 				E20A3ADE1D7559610010E86B /* Assets.xcassets in Resources */,
+				E2AAA2E81DA6AA1D0027C342 /* README.md in Resources */,
 				E20A3ADC1D7559610010E86B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03814D6806568F954F4B658B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-happyt/Pods-happyt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A232FB884B37E1A492DE6BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9939DB90E8B9003C36F41BB8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-happyt/Pods-happyt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E20A3ACF1D7559610010E86B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E11B851DA4E27B008FCE22 /* WeekChart.swift in Sources */,
+				E20A3B031D90CD3F0010E86B /* Habit.swift in Sources */,
 				E20A3AD91D7559610010E86B /* LoginViewController.swift in Sources */,
+				E20A3AF81D772A390010E86B /* HabitsViewController.swift in Sources */,
+				E2E11B8E1DA624C0008FCE22 /* WeekChartPoint.swift in Sources */,
+				E2E11B811DA3814B008FCE22 /* Model.xcdatamodeld in Sources */,
+				E20A3B001D8DF71E0010E86B /* AddHabitViewController.swift in Sources */,
+				E2B3873B1D9F061300BCC1D7 /* Event.swift in Sources */,
+				E264109F1D96EF8C0020B0E6 /* UserInfo.swift in Sources */,
+				E26410A41D972C390020B0E6 /* Service.swift in Sources */,
+				E2E11B831DA382D3008FCE22 /* CoreDataStackManager.swift in Sources */,
+				E2B3873F1D9F996200BCC1D7 /* HabitContainer.swift in Sources */,
+				E2B387411D9FB20500BCC1D7 /* DayChart.swift in Sources */,
+				E2E11B871DA4EA6A008FCE22 /* ChartType.swift in Sources */,
 				E20A3AD71D7559610010E86B /* AppDelegate.swift in Sources */,
+				E248B4E81D93B0880039CCB4 /* HabitTableViewCell.swift in Sources */,
+				E2E11B901DA626E4008FCE22 /* WeekDayType.swift in Sources */,
+				E2E11B891DA4EB3D008FCE22 /* HabitChart.swift in Sources */,
+				E2E11B7B1DA370A3008FCE22 /* Date.swift in Sources */,
+				E20A3AFC1D8DD9520010E86B /* StatsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +495,7 @@
 		};
 		E20A3AE61D7559620010E86B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1466912760F50993C8906CFA /* Pods-happyt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -279,6 +512,7 @@
 		};
 		E20A3AE71D7559620010E86B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC79C56A268F0AC5EE344B18 /* Pods-happyt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -312,8 +546,22 @@
 				E20A3AE71D7559620010E86B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2E11B7F1DA3814B008FCE22 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2E11B801DA3814B008FCE22 /* Model.xcdatamodel */,
+			);
+			currentVersion = E2E11B801DA3814B008FCE22 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E20A3ACB1D7559610010E86B /* Project object */;
 }
