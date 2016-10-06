@@ -10,6 +10,18 @@ import SwiftCharts
 
 class WeekChart: HabitChart {
     init(frame: CGRect, habit: Habit) {
+        var minY = 0
+        var maxY = 1
+        
+        func updateMinMax(value: Int) {
+            if(value > maxY) {
+                maxY = value
+            }
+            if(value < minY) {
+                minY = value
+            }
+        }
+        
         let today = NSDate()
         let unitFlags: NSCalendarUnit = [.Weekday, .Day]
         let dateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: today)
@@ -25,47 +37,46 @@ class WeekChart: HabitChart {
         
         var daysWithEvents: [String: WeekChartPoint] = ["Sun": WeekChartPoint(type: WeekDayType.Sun), "Mon": WeekChartPoint(type: WeekDayType.Mon), "Tue": WeekChartPoint(type: WeekDayType.Tue), "Wed": WeekChartPoint(type: WeekDayType.Wed), "Thu": WeekChartPoint(type: WeekDayType.Thu), "Fri": WeekChartPoint(type: WeekDayType.Fri), "Sat": WeekChartPoint(type: WeekDayType.Sat)]
         
+        func updateChartPoints(dayName: String, event: Event) {
+            daysWithEvents[dayName]!.events.append(event)
+            daysWithEvents[dayName]!.value = daysWithEvents[dayName]!.events.count
+            updateMinMax(daysWithEvents[dayName]!.value)
+        }
+        
         for event in habit.events.array as! [Event] {
             // Sun
             if(event.date.isGreaterThanDate(weekStart) && event.date.isLessThanDate(weekStart.addDays(1))) {
-                daysWithEvents["Sun"]?.events.append(event)
-                daysWithEvents["Sun"]?.value = (daysWithEvents["Sun"]?.events.count)!
+                updateChartPoints("Sun", event: event)
             }
             
             // Mon
             if(event.date.isGreaterThanDate(weekStart.addDays(1)) && event.date.isLessThanDate(weekStart.addDays(2))) {
-                daysWithEvents["Mon"]?.events.append(event)
-                daysWithEvents["Mon"]?.value = (daysWithEvents["Mon"]?.events.count)!
+                updateChartPoints("Mon", event: event)
             }
             
             // Tue
             if(event.date.isGreaterThanDate(weekStart.addDays(2)) && event.date.isLessThanDate(weekStart.addDays(3))) {
-                daysWithEvents["Tue"]?.events.append(event)
-                daysWithEvents["Tue"]?.value = (daysWithEvents["Tue"]?.events.count)!
+                updateChartPoints("Tue", event: event)
             }
             
             // Wed
             if(event.date.isGreaterThanDate(weekStart.addDays(3)) && event.date.isLessThanDate(weekStart.addDays(4))) {
-                daysWithEvents["Wed"]?.events.append(event)
-                daysWithEvents["Wed"]?.value = (daysWithEvents["Wed"]?.events.count)!
+                updateChartPoints("Wed", event: event)
             }
             
             // Thur
             if(event.date.isGreaterThanDate(weekStart.addDays(4)) && event.date.isLessThanDate(weekStart.addDays(5))) {
-                daysWithEvents["Thu"]?.events.append(event)
-                daysWithEvents["Thu"]?.value = (daysWithEvents["Thu"]?.events.count)!
+                updateChartPoints("Thu", event: event)
             }
             
             // Fri
             if(event.date.isGreaterThanDate(weekStart.addDays(5)) && event.date.isLessThanDate(weekStart.addDays(6))) {
-                daysWithEvents["Fri"]?.events.append(event)
-                daysWithEvents["Fri"]?.value = (daysWithEvents["Fri"]?.events.count)!
+                updateChartPoints("Fri", event: event)
             }
             
             // Sat
             if(event.date.isGreaterThanDate(weekStart.addDays(6)) && event.date.isLessThanDate(weekStart.addDays(7))) {
-                daysWithEvents["Sat"]?.events.append(event)
-                daysWithEvents["Sat"]?.value = (daysWithEvents["Sat"]?.events.count)!
+                updateChartPoints("Sat", event: event)
             }
         }
         
@@ -82,7 +93,7 @@ class WeekChart: HabitChart {
         let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
         
         let (axisValues1, axisValues2) = (
-            0.stride(through: 20, by: 2).map {ChartAxisValueDouble(Double($0), labelSettings: labelSettings)},
+            (minY).stride(through: maxY, by: 1).map {ChartAxisValueDouble(Double($0), labelSettings: labelSettings)},
             chartData.map() { name, x, y in
                 ChartAxisValueString(name, order: x, labelSettings: labelSettings)
             }
