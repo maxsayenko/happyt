@@ -165,14 +165,14 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPM-Xs-Z0S">
-                                <rect key="frame" x="260" y="60" width="80" height="80"/>
+                                <rect key="frame" x="260" y="70" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="4Ac-ap-dtn"/>
                                     <constraint firstAttribute="height" constant="80" id="Cqx-w0-lYp"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg4-Wh-OmZ">
-                                <rect key="frame" x="205" y="148" width="190" height="21"/>
+                                <rect key="frame" x="205" y="158" width="190" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="190" id="LIO-VX-xku"/>
                                 </constraints>
@@ -186,18 +186,18 @@
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="top" secondItem="ql2-0d-WCh" secondAttribute="top" id="9ZR-ez-yRG"/>
                             <constraint firstItem="Iyg-Wn-vb9" firstAttribute="leading" secondItem="zdk-fI-Xf5" secondAttribute="leading" constant="20" id="Ahe-DD-b1l"/>
                             <constraint firstItem="H2d-hH-uOX" firstAttribute="bottom" secondItem="mqh-BS-CQz" secondAttribute="top" id="DDa-u4-7aN"/>
-                            <constraint firstItem="dPM-Xs-Z0S" firstAttribute="top" secondItem="zdk-fI-Xf5" secondAttribute="bottom" id="Djf-hb-fbt"/>
+                            <constraint firstItem="dPM-Xs-Z0S" firstAttribute="top" secondItem="zdk-fI-Xf5" secondAttribute="bottom" constant="10" id="Djf-hb-fbt"/>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leadingMargin" constant="-20" id="GJi-ol-93M"/>
                             <constraint firstItem="mqh-BS-CQz" firstAttribute="top" secondItem="Iyg-Wn-vb9" secondAttribute="bottom" constant="458" id="NWn-hN-yA2"/>
                             <constraint firstItem="Iyg-Wn-vb9" firstAttribute="top" secondItem="zdk-fI-Xf5" secondAttribute="bottom" constant="128" id="NyT-ZO-sgs"/>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leading" id="Rh7-S7-lhG"/>
-                            <constraint firstItem="H2d-hH-uOX" firstAttribute="top" secondItem="cg4-Wh-OmZ" secondAttribute="bottom" constant="60" id="SYD-E8-jSg"/>
+                            <constraint firstItem="H2d-hH-uOX" firstAttribute="top" secondItem="cg4-Wh-OmZ" secondAttribute="bottom" constant="52" id="SYD-E8-jSg"/>
                             <constraint firstItem="cg4-Wh-OmZ" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leading" constant="203" id="YKX-rS-mj5"/>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="leading" secondItem="ql2-0d-WCh" secondAttribute="leadingMargin" constant="-20" id="Zzc-vA-ezJ"/>
                             <constraint firstItem="H2d-hH-uOX" firstAttribute="top" secondItem="Iyg-Wn-vb9" secondAttribute="bottom" constant="8" symbolic="YES" id="cFm-HZ-46f"/>
                             <constraint firstItem="dPM-Xs-Z0S" firstAttribute="centerX" secondItem="ql2-0d-WCh" secondAttribute="centerX" id="eDc-BE-5nz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zdk-fI-Xf5" secondAttribute="trailing" id="f4d-R7-vna"/>
-                            <constraint firstItem="cg4-Wh-OmZ" firstAttribute="top" secondItem="dPM-Xs-Z0S" secondAttribute="bottom" constant="8" symbolic="YES" id="gKT-lt-hlk"/>
+                            <constraint firstItem="cg4-Wh-OmZ" firstAttribute="top" secondItem="dPM-Xs-Z0S" secondAttribute="bottom" constant="8" id="gKT-lt-hlk"/>
                             <constraint firstItem="zdk-fI-Xf5" firstAttribute="centerX" secondItem="ql2-0d-WCh" secondAttribute="centerX" id="hAV-fC-Ob8"/>
                             <constraint firstItem="H2d-hH-uOX" firstAttribute="leading" secondItem="zdk-fI-Xf5" secondAttribute="leading" id="k8C-ui-nSS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zdk-fI-Xf5" secondAttribute="trailing" constant="-20" id="kc5-ad-GLH"/>
