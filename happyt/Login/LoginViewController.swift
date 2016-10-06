@@ -7,32 +7,16 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        debugPrint(NSDate())
-        let date = NSDate();
-        let dateFormatter = NSDateFormatter()
-        //To prevent displaying either date or time, set the desired style to NoStyle.
-        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle //Set time style
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle //Set date style
-        dateFormatter.timeZone = NSTimeZone()
-        
-        let localDate = dateFormatter.stringFromDate(date)
-        
-        debugPrint("UTC Time")
-        debugPrint(date)
-        debugPrint("Local Time")
-        debugPrint(localDate)
-        // Do any additional setup after loading the view, typically from a nib.
-        
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
-            debugPrint("Logged In")
             returnUserData()
         }
         else
@@ -52,26 +36,20 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     
     // Facebook Delegate Methods
-    
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        print("User Logged In")
+        debugPrint("User Logged In")
         
         if ((error) != nil)
         {
-            // Process error
-            debugPrint("Error: loginButton")
+            SCLAlertView().showError("Login Error", subTitle: "Failed FaceBook login.")
         }
         else if result.isCancelled {
             // Handle cancellations
-            debugPrint("Error: Handle cancellations")
+            SCLAlertView().showError("Access Error", subTitle: "Login was canceled.")
         }
         else {
             // TODO: Simplify login flow
-            debugPrint("segue1")
             returnUserData()
-            //self.performSegueWithIdentifier("toDashboardSegue", sender: self)
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
                 // Do work
@@ -80,21 +58,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("User Logged Out")
+        // logout
     }
     
     func returnUserData()
     {
-        debugPrint("returnUserData")
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             debugPrint("got FBSDKGraphRequest DONE")
             if ((error) != nil) {
                 // Process error
-                print("Error: \(error)")
+                SCLAlertView().showError("Data Error", subTitle: "Failed to get user information.")
             }
             else {
-                print("fetched user: \(result)")
                 var userInfo = UserInfo()
                 if let userName = result.valueForKey("name") as? String {
                     userInfo.name = userName
@@ -109,18 +85,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 }
                 
                 self.appDelegate.userInfo = userInfo
-                debugPrint(self.appDelegate.userInfo)
-                
-                debugPrint("segue")
                 self.performSegueWithIdentifier("toDashboardSegue", sender: self)
             }
         })
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        debugPrint(segue.identifier)
-        if(segue.identifier == "toDashboardSegue") {
-
-        }
     }
 }

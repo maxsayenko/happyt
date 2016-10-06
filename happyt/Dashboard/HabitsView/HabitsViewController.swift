@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SCLAlertView
 
 class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -45,8 +46,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        debugPrint("Habits")
-        //debugPrint(appDelegate.habits)
+        
         self.navigationController?.navigationBarHidden = true
 
         // TODO: Move to some view init function
@@ -66,6 +66,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 })
                 }.error { err in
                     debugPrint("Error while fetching Image from url: \(err)")
+                    SCLAlertView().showError("Load Error", subTitle: "Failed to load profile image")
             }
         }
     }

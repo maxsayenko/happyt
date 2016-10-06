@@ -12,4 +12,5 @@ target 'happyt' do
     pod 'SwiftyJSON', '~> 2.3.2'
     pod 'SwiftCharts', '~> 0.4'
     pod 'PureLayout'
+    pod 'SCLAlertView', '~>0.6'
 end

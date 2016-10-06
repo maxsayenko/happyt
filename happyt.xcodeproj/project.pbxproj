@@ -127,7 +127,7 @@
 				E2E11B8B1DA4EE9C008FCE22 /* Helpers */,
 				E2E11B8A1DA4EE7E008FCE22 /* Views */,
 				E2E11B791DA3708A008FCE22 /* Extensions */,
-				E26410A21D972BF70020B0E6 /* Services */,
+				E26410A21D972BF70020B0E6 /* Network */,
 				E20A3B011D90CD140010E86B /* DataModels */,
 				E20A3ADA1D7559610010E86B /* Main.storyboard */,
 				E20A3ADD1D7559610010E86B /* Assets.xcassets */,
@@ -177,11 +177,12 @@
 			path = HabitsView;
 			sourceTree = "<group>";
 		};
-		E26410A21D972BF70020B0E6 /* Services */ = {
+		E26410A21D972BF70020B0E6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				E26410A31D972C390020B0E6 /* Service.swift */,
 			);
+			name = Network;
 			path = Services;
 			sourceTree = "<group>";
 		};

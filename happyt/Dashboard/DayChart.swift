@@ -12,6 +12,14 @@ class DayChart: HabitChart {
     init(frame: CGRect, habit: Habit) {
         let chartFrame = CGRectMake(10, 35, frame.width - 20, frame.height - 45)
         
+        let chartSettings = ChartSettings()
+        chartSettings.axisStrokeWidth = 0.2
+        chartSettings.labelsToAxisSpacingX = 3
+        chartSettings.top = 10
+        chartSettings.trailing = 10
+        
+        let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
+        
         var coordinates: [(Int, Int)] = [(0, 0)]
         var yValue = 0
         var minY = 0
@@ -24,8 +32,6 @@ class DayChart: HabitChart {
         let filteredEvents = habit.events.filter() { event in
             return event.date.isGreaterThanDate(today.startOfDay) && event.date.isLessThanDate(today)
         }
-        
-        debugPrint("total events count = \(habit.events.count) and filtered = \(filteredEvents.count)")
         
         for event in filteredEvents as! [Event] {
             let dateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: event.date)
@@ -47,17 +53,9 @@ class DayChart: HabitChart {
         let xValues = [0, 3, 6, 9, 12, 15, 18, 21, 23].map {ChartAxisValueInt($0)}
         let yValues = (minY).stride(through: maxY, by: 1).map {ChartAxisValueInt($0)}
         
-        let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
-        
         // create axis models with axis values and axis title
         let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Time", settings: labelSettings))
         let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "Count", settings: labelSettings.defaultVertical()))
-        
-        let chartSettings = ChartSettings()
-        chartSettings.axisStrokeWidth = 0.2
-        chartSettings.labelsToAxisSpacingX = 3
-        chartSettings.top = 10
-        chartSettings.trailing = 10
         
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
         let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
