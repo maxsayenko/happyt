@@ -24,6 +24,7 @@
 		E248B4E81D93B0880039CCB4 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248B4E71D93B0880039CCB4 /* HabitTableViewCell.swift */; };
 		E264109F1D96EF8C0020B0E6 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264109E1D96EF8C0020B0E6 /* UserInfo.swift */; };
 		E26410A41D972C390020B0E6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26410A31D972C390020B0E6 /* Service.swift */; };
+		E2AAA2E81DA6AA1D0027C342 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E2AAA2E71DA6AA1D0027C342 /* README.md */; };
 		E2B3873B1D9F061300BCC1D7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3873A1D9F061300BCC1D7 /* Event.swift */; };
 		E2B3873F1D9F996200BCC1D7 /* HabitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */; };
 		E2B387411D9FB20500BCC1D7 /* DayChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B387401D9FB20500BCC1D7 /* DayChart.swift */; };
@@ -60,6 +61,7 @@
 		E248B4E71D93B0880039CCB4 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		E264109E1D96EF8C0020B0E6 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		E26410A31D972C390020B0E6 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E2AAA2E71DA6AA1D0027C342 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E2B3873A1D9F061300BCC1D7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E2B3873E1D9F996200BCC1D7 /* HabitContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitContainer.swift; sourceTree = "<group>"; };
 		E2B387401D9FB20500BCC1D7 /* DayChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayChart.swift; path = Dashboard/DayChart.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				E20A3AD61D7559610010E86B /* AppDelegate.swift */,
 				E2E11B7F1DA3814B008FCE22 /* Model.xcdatamodeld */,
 				E2E11B821DA382D3008FCE22 /* CoreDataStackManager.swift */,
+				E2AAA2E71DA6AA1D0027C342 /* README.md */,
 			);
 			path = happyt;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			files = (
 				E20A3AE11D7559610010E86B /* LaunchScreen.storyboard in Resources */,
 				E20A3ADE1D7559610010E86B /* Assets.xcassets in Resources */,
+				E2AAA2E81DA6AA1D0027C342 /* README.md in Resources */,
 				E20A3ADC1D7559610010E86B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
