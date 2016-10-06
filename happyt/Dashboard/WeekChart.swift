@@ -20,7 +20,13 @@ class WeekChart: HabitChart {
         chartSettings.trailing = 15
         chartSettings.labelsToAxisSpacingY = 10
 
-        let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14))
+        let labelSettings = ChartLabelSettings(font: UIFont.systemFontOfSize(14), fontColor: UIColor.whiteColor(), rotation: 0, rotationKeep: .Center, shiftXOnRotation: true, textAlignment: .Default)
+        
+        let barWidth: CGFloat = 15
+        
+        let guidelinesColor = UIColor.whiteColor()
+        let barColor = UIColor(red: 0, green: 161, blue: 216, alpha: 1)
+        let baselineColor = UIColor.yellowColor()
         
         // To maintain solid order
         let xAxisData = [("Sun", 0), ("Mon", 1), ("Tue", 2), ("Wed", 3), ("Thurs", 4), ("Fri", 5), ("Sat", 6)]
@@ -44,12 +50,6 @@ class WeekChart: HabitChart {
         // Go back in time, 1 less day, and then go to the beginning of that day
         let weekStart = today.addDays((dateComponents.weekday - 1) * -1).startOfDay
         
-//        debugPrint(dateComponents.weekday)
-//        debugPrint(today)
-//        debugPrint(today.getString())
-//        debugPrint(weekStart)
-//        debugPrint(weekStart.getString())
-        
         var daysWithEvents: [String: WeekChartPoint] = ["Sun": WeekChartPoint(type: WeekDayType.Sun), "Mon": WeekChartPoint(type: WeekDayType.Mon), "Tue": WeekChartPoint(type: WeekDayType.Tue), "Wed": WeekChartPoint(type: WeekDayType.Wed), "Thu": WeekChartPoint(type: WeekDayType.Thu), "Fri": WeekChartPoint(type: WeekDayType.Fri), "Sat": WeekChartPoint(type: WeekDayType.Sat)]
         
         func updateChartPoints(dayName: String, event: Event) {
@@ -59,7 +59,6 @@ class WeekChart: HabitChart {
             } else {
                 daysWithEvents[dayName]!.value -= 1
             }
-            //daysWithEvents[dayName]!.value = daysWithEvents[dayName]!.events.count
             updateMinMax(daysWithEvents[dayName]!.value)
         }
         
@@ -110,33 +109,31 @@ class WeekChart: HabitChart {
         let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Days", settings: labelSettings))
         let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "Count", settings: labelSettings.defaultVertical()))
         
-        let barViewGenerator = {(chartPointModel: ChartPointLayerModel, layer: ChartPointsViewsLayer, chart: Chart) -> UIView? in
-            let bottomLeft = CGPoint(x: layer.innerFrame.origin.x, y: layer.innerFrame.origin.y + layer.innerFrame.height)
-            
-            let barWidth: CGFloat = 15
-            
-            let (p1, p2): (CGPoint, CGPoint) = {
-                return (CGPoint(x: chartPointModel.screenLoc.x, y: bottomLeft.y), CGPoint(x: chartPointModel.screenLoc.x, y: chartPointModel.screenLoc.y))
-            }()
-            return ChartPointViewBar(p1: p1, p2: p2, width: barWidth, bgColor: UIColor.blueColor())
-        }
-        
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
         let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
         
         
         // Bar Data Layer
+        let barViewGenerator = {(chartPointModel: ChartPointLayerModel, layer: ChartPointsViewsLayer, chart: Chart) -> UIView? in
+            let bottomLeft = CGPoint(x: layer.innerFrame.origin.x, y: layer.innerFrame.origin.y + layer.innerFrame.height)
+
+            let (p1, p2): (CGPoint, CGPoint) = {
+                return (CGPoint(x: chartPointModel.screenLoc.x, y: bottomLeft.y), CGPoint(x: chartPointModel.screenLoc.x, y: chartPointModel.screenLoc.y))
+            }()
+            return ChartPointViewBar(p1: p1, p2: p2, width: barWidth, bgColor: barColor)
+        }
         let chartPoints = daysWithEvents.map{
             ChartPoint(x: ChartAxisValueString($0.0, order: $0.1.type.rawValue), y: ChartAxisValueInt($0.1.value))
         }
         let chartPointsLayer = ChartPointsViewsLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, chartPoints: chartPoints, viewGenerator: barViewGenerator)
         
-        let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.blackColor(), linesWidth: 1.0)
+        // guidlines layer
+        let settings = ChartGuideLinesDottedLayerSettings(linesColor: guidelinesColor, linesWidth: 1.0)
         let guidelinesLayer = ChartGuideLinesDottedLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, settings: settings)
         
         // create layer with base line
         let baseLinePoints: [ChartPoint] = [(0, 0), (6, 0)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
-        let baseLineModel = ChartLineModel(chartPoints: baseLinePoints, lineColor: UIColor.blueColor(), lineWidth: 3, animDuration: 0, animDelay: 0)
+        let baseLineModel = ChartLineModel(chartPoints: baseLinePoints, lineColor: baselineColor, lineWidth: 3, animDuration: 0, animDelay: 0)
         let baseLineChartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [baseLineModel])
         
         let chart = Chart(
