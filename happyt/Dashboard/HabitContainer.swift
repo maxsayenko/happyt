@@ -28,13 +28,15 @@ struct HabitContainer {
         habitContainerView.addSubview(nameLabel)
         
         // Chart
-        var chart: HabitChart = DayChart(frame: habitContainerView.frame, habit: habit)
-        if(type == ChartType.Week) {
+        var chart: HabitChart?
+        if(type == ChartType.Day) {
+            chart = DayChart(frame: habitContainerView.frame, habit: habit)
+        } else {
             chart = WeekChart(frame: habitContainerView.frame, habit: habit)
         }
 
-        self.chart = chart.chart
-        habitContainerView.addSubview(chart.view)
+        self.chart = chart!.chart
+        habitContainerView.addSubview(chart!.view)
         
         self.view = habitContainerView
     }
