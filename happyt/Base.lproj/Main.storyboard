@@ -60,6 +60,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="3Ir-ZD-Alr"/>
                                 </constraints>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Habits" id="dYR-72-Bwr">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fe7-hd-4RO">
