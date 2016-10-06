@@ -18,18 +18,11 @@ class DayChart: HabitChart {
         var maxY = 1
         
         let today = NSDate()
-        let unitFlags: NSCalendarUnit = [.Hour, .Day, .Month, .Year, .Minute]
+        let unitFlags: NSCalendarUnit = [.Minute, .Hour, .Day, .Month, .Year]
         
-        // TODO: Fix yesterday
-        let yesterday = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -2, toDate: today, options: [])
-        
-//        debugPrint(today)
-//        debugPrint("Yesterday")
-//        debugPrint(yesterday!)
-        
-        // Last 24 hours of events
+        // Today's events
         let filteredEvents = habit.events.filter() { event in
-            return event.date.isGreaterThanDate(yesterday!) && event.date.isLessThanDate(today)
+            return event.date.isGreaterThanDate(today.startOfDay) && event.date.isLessThanDate(today)
         }
         
         debugPrint("total events count = \(habit.events.count) and filtered = \(filteredEvents.count)")
@@ -94,7 +87,5 @@ class DayChart: HabitChart {
         )
         
         super.init(view: chart.view, chart: chart)
-//        super.chart = chart
-//        super.view = chart.view
     }
 }
