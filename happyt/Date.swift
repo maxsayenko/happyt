@@ -18,6 +18,12 @@ extension NSDate {
         return NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startOfDay, options: NSCalendarOptions())
     }
     
+    func getString() -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE',' dd MMMM HH:mm:ss"
+        return dateFormatter.stringFromDate(self)
+    }
+    
     func isGreaterThanDate(dateToCompare: NSDate) -> Bool {
         var isGreater = false
         
