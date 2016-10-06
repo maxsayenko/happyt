@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SCLAlertView
 
 class AddHabitViewController: UITableViewController {
     lazy var sharedContext: NSManagedObjectContext =  {
@@ -27,7 +28,11 @@ class AddHabitViewController: UITableViewController {
     }
     
     @IBAction func SaveClick(sender: UIBarButtonItem) {
-        // TODO: null checks
+        guard let name: String = nameText.text where !name.isEmpty else {
+            SCLAlertView().showWarning("No Data", subTitle: "Name is required.")
+            return
+        }
+        
         _ = Habit(name: nameText.text!, hasPlusButton: positiveActionSwitch.on, hasMinusButton: negativeActionSwitch.on, context: sharedContext)
 
         saveContext()
