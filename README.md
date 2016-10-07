@@ -3,9 +3,9 @@
 Happyt is an app to track habits. Bringing awareness to the amount of activities that we do, whether they are good or bad.
 
 Steps to install:
-- Clone the repo: git clone https://github.com/maxsayenko/happyt.git
-- CD into the directory: cd happyt
-- install Cocoa Pods: pod install and you should see something like this
+- Clone the repo: *$ git clone https://github.com/maxsayenko/happyt.git*
+- CD into the directory: *$ cd happyt*
+- install Cocoa Pods: *$ pod install* and you should see something like this
 ```
 Analyzing dependencies
 Downloading dependencies
