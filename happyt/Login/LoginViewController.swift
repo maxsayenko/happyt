@@ -48,11 +48,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             SCLAlertView().showError("Access Error", subTitle: "Login was canceled.")
         }
         else {
-            // TODO: Simplify login flow
             returnUserData()
-            if result.grantedPermissions.contains("email")
-            {
-                // Do work
+            if result.grantedPermissions.contains("email") {
             }
         }
     }
