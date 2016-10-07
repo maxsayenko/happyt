@@ -18,10 +18,8 @@ struct HabitContainer {
     init(frame: CGRect, habit: Habit, type: ChartType) {
         let habitContainerView = UIView(frame: frame)
         habitContainerView.translatesAutoresizingMaskIntoConstraints = false
-        //habitContainerView.alpha = 0.6
         habitContainerView.backgroundColor = UIColor.grayColor()
         habitContainerView.layer.cornerRadius = 20
-        //habitContainerView.layer.borderWidth = 1
         
         // Label
         let nameLabel = UILabel(frame: CGRectMake(labelOffsetX, labelOffsetY, frame.width, labelHeight))

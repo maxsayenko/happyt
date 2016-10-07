@@ -29,11 +29,4 @@ class Habit: NSManagedObject {
         self.hasMinusButton = hasMinusButton
         self.id = NSUUID().UUIDString
     }
-    
-//    init(name: String, hasPlusButton: Bool, hasMinusButton: Bool) {
-//        self.name = name
-//        self.hasPlusButton = hasPlusButton
-//        self.hasMinusButton = hasMinusButton
-//        self.id = NSUUID().UUIDString
-//    }
 }

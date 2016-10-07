@@ -25,34 +25,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        // This is purely to generate some data for the app. To display in graphs. Comment scratchpadContext out and uncomment sharedContext to use.  
+        // Dear, Udacity reviewer feel free to use this stub data to generate some dummy events.
+        // It makes graphs review easier and pretier. 
+        // Comment scratchpadContext out and uncomment sharedContext to use.
         let context = CoreDataStackManager.sharedInstance().scratchpadContext
         //let context = sharedContext
         
-        let habit1 = Habit(name: "test1", hasPlusButton: true, hasMinusButton: true, context: context)
-        var events1: [Event] = []
-        for hour in [3, 7, 10, 17, 19, 23] {
-            let c = NSDateComponents()
-            c.year = 2016
-            c.month = 10
-            c.day = 3
-            c.hour = hour
-            c.minute = 15
-            c.second = 37
-            let date = NSCalendar.currentCalendar().dateFromComponents(c)
-            
-            var positive = true
-            if (hour == 3 || hour == 11 || hour == 19) {
-                positive = false
+        let today = NSDate()
+        
+        func getEvents(eventHoursPerDay: [(day: Int, hours: [Int])]) -> [Event] {
+            var events: [Event] = []
+            for daySettings in eventHoursPerDay {
+                for hour in daySettings.hours {
+                    var positive = true
+                    if (hour == 7 || hour == 19) {
+                        positive = false
+                    }
+                    
+                    let eventDate = today.startOfDay.addDays(daySettings.day).addHours(hour)
+                    
+                    let event = Event(date: eventDate, isPositive: positive, context: context)
+                    events.append(event)
+                }
             }
             
-            let event = Event(date: date!, isPositive: positive, context: context)
-            events1.append(event)
+            return events
         }
-        habit1.events = NSOrderedSet(array: events1)
         
-        _ = Habit(name: "new one", hasPlusButton: true, hasMinusButton: false, context: context)
-        _ = Habit(name: "new one1", hasPlusButton: true, hasMinusButton: false, context: context)
+        // First Habit
+        let habit1 = Habit(name: "Drink Water", hasPlusButton: true, hasMinusButton: true, context: context)
+        habit1.events = NSOrderedSet(array: getEvents(
+            [
+                // If some hours are in the future they will be ignored by the app. 
+                // This time is in hours local to the phone
+                // Negative days - to fill in older events, from previous days
+                (0, [1, 3, 7, 11, 19, 21]),
+                (-1, [3, 8, 15, 19]),
+                (-2, [1, 3, 9, 12, 15, 17, 21, 23])
+            ]
+            ))
+        
+        // Second Habit
+        let habit2 = Habit(name: "Stretch", hasPlusButton: true, hasMinusButton: true, context: context)
+        habit2.events = NSOrderedSet(array: getEvents(
+            [
+                (0, [8, 10, 13, 15, 19, 21]),
+                (-1, [1, 7, 15, 19, 22]),
+            ]
+            ))
+
         saveContext()
         
         // Override point for customization after application launch.

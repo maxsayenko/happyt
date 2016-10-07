@@ -8,7 +8,6 @@
 import CoreData
 
 class Event: NSManagedObject {
-    //@NSManaged var habitId: String
     @NSManaged var date: NSDate
     @NSManaged var isPositive: NSNumber
     
@@ -24,7 +23,6 @@ class Event: NSManagedObject {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.date = NSDate()
-        //self.habitId = id
         self.isPositive = isPositive
     }
     
@@ -33,7 +31,6 @@ class Event: NSManagedObject {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.date = date
-        //self.habitId = id
         self.isPositive = isPositive
     }
 }
