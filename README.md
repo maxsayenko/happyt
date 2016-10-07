@@ -2,7 +2,7 @@
 
 Happyt is an app to track habits. Bringing awareness to the amount of activities that we do, whether they are good or bad.
 
-Steps to install:
+**Steps to install:**
 - Clone the repo: **$ git clone https://github.com/maxsayenko/happyt.git**
 - CD into the directory: **$ cd happyt**
 - install Cocoa Pods: **$ pod install** and you should see something like this
@@ -24,7 +24,7 @@ pods installed.
 Now you are ready to lunch the app by openning **happyt.xcworkspace** file. 
 
 
-Steps to use:
+**Steps to use:**
 - To Login user needs to use FB login. (There are no postings on the wall or sharing of that data taken place)
 - On the Dashboard view user can tap plus icon (top right) to add more habits. And choose whether this habit has only positive events, negative or both
 - Once habits are added. User can track their activity by tapping plus or minus button. Given that habit supports that event
